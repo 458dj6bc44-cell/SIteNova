@@ -141,7 +141,7 @@ export const ProjectNoire: React.FC = () => {
                       {selectedFragrance.name}
                     </h3>
                     <div className="text-lg font-bold text-amber-400">
-                      ${selectedFragrance.price}.00 USD
+                      {selectedFragrance.price.toLocaleString()} EGP
                     </div>
                     <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
                       <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold block">
@@ -190,7 +190,7 @@ export const ProjectNoire: React.FC = () => {
                         }`}
                       >
                         <div className="text-xs font-bold truncate">{fragrance.name.split(' ')[0]}</div>
-                        <div className="text-[11px] text-amber-400/90 font-medium mt-0.5">${fragrance.price}</div>
+                        <div className="text-[11px] text-amber-400/90 font-medium mt-0.5">{fragrance.price.toLocaleString()} EGP</div>
                       </button>
                     ))}
                   </div>

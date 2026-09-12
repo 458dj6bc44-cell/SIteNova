@@ -198,7 +198,7 @@ export const ProjectGStore: React.FC = () => {
                           <span className="text-[10px] text-slate-500 uppercase tracking-wider">AeroTech Dry</span>
                           <h4 className="text-xs font-bold text-white truncate">Pro Training Tee</h4>
                           <div className="mt-1 flex items-center justify-between">
-                            <span className="text-xs font-bold text-blue-400">$48.00</span>
+                            <span className="text-xs font-bold text-blue-400">850 EGP</span>
                             <span className="text-[10px] text-slate-400">Sizes S–XL</span>
                           </div>
                         </div>
@@ -216,7 +216,7 @@ export const ProjectGStore: React.FC = () => {
                           <span className="text-[10px] text-slate-500 uppercase tracking-wider">Footwear</span>
                           <h4 className="text-xs font-bold text-white truncate">Velocity Runner V2</h4>
                           <div className="mt-1 flex items-center justify-between">
-                            <span className="text-xs font-bold text-blue-400">$130.00</span>
+                            <span className="text-xs font-bold text-blue-400">2,450 EGP</span>
                             <span className="text-[10px] text-emerald-400">In Stock</span>
                           </div>
                         </div>
@@ -234,7 +234,7 @@ export const ProjectGStore: React.FC = () => {
                           <span className="text-[10px] text-slate-500 uppercase tracking-wider">Outerwear</span>
                           <h4 className="text-xs font-bold text-white truncate">StormShield Windbreaker</h4>
                           <div className="mt-1 flex items-center justify-between">
-                            <span className="text-xs font-bold text-blue-400">$95.00</span>
+                            <span className="text-xs font-bold text-blue-400">1,650 EGP</span>
                             <span className="text-[10px] text-slate-400">Waterproof</span>
                           </div>
                         </div>
@@ -332,7 +332,7 @@ export const ProjectGStore: React.FC = () => {
                         </div>
 
                         <div className="pt-2 flex items-center justify-between">
-                          <span className="text-base font-bold text-white">$48.00</span>
+                          <span className="text-base font-bold text-white">850 EGP</span>
                           <button
                             onClick={handleAddToCart}
                             className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold tracking-wide transition-all shadow-md shadow-blue-500/30 active:scale-95 flex items-center gap-1.5"
@@ -363,7 +363,7 @@ export const ProjectGStore: React.FC = () => {
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="text-xs font-bold text-white">$48.00</span>
+                        <span className="text-xs font-bold text-white">850 EGP</span>
                         <span className="text-[10px] text-slate-400 block">Qty: 1</span>
                       </div>
                     </div>
@@ -379,7 +379,7 @@ export const ProjectGStore: React.FC = () => {
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="text-xs font-bold text-white">$130.00</span>
+                        <span className="text-xs font-bold text-white">2,450 EGP</span>
                         <span className="text-[10px] text-slate-400 block">Qty: 1</span>
                       </div>
                     </div>
@@ -388,15 +388,15 @@ export const ProjectGStore: React.FC = () => {
                     <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-2">
                       <div className="flex justify-between text-xs text-slate-400">
                         <span>Subtotal:</span>
-                        <span className="text-white font-medium">$178.00</span>
+                        <span className="text-white font-medium">3,300 EGP</span>
                       </div>
                       <div className="flex justify-between text-xs text-slate-400">
                         <span>Shipping:</span>
-                        <span className="text-emerald-400 font-medium">Free Worldwide</span>
+                        <span className="text-emerald-400 font-medium">Free Across Egypt</span>
                       </div>
                       <div className="pt-2 border-t border-slate-800 flex justify-between text-sm font-bold text-white">
                         <span>Total:</span>
-                        <span className="text-blue-400">$178.00</span>
+                        <span className="text-blue-400 font-bold">3,300 EGP</span>
                       </div>
                     </div>
                   </div>

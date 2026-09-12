@@ -23,7 +23,7 @@ export const agencyConfig = {
   stats: [
     { value: '100%', label: 'Static & Edge Hosted' },
     { value: '< 1s', label: 'Page Load Speed' },
-    { value: '0$', label: 'Monthly Database Fees' },
+    { value: '0 EGP', label: 'Monthly Database Fees' },
     { value: '7-14d', label: 'Average Delivery' },
   ],
 };
@@ -243,7 +243,7 @@ export const whyChooseSiteNova: ValueProp[] = [
     title: 'Zero Server Maintenance Costs',
     description:
       'Unlike WordPress or complex backend systems that break during plugin updates or require expensive servers, our 100% static React sites cost virtually nothing to maintain.',
-    metric: '$0/mo',
+    metric: '0 EGP/mo',
     metricLabel: 'Database & server fees',
     icon: 'ShieldCheck',
   },
@@ -294,8 +294,8 @@ export const processSteps: ProcessStep[] = [
 
 // Sample items for the NOIRÉ WhatsApp simulator so visitors can test it live!
 export const sampleNoireFragrances = [
-  { id: '1', name: 'Oud Impérial Eau de Parfum', size: '100 ml', price: 185, notes: 'Cambodian Oud, Incense, Leather' },
-  { id: '2', name: 'Santal Velours Extrait', size: '50 ml', price: 140, notes: 'Mysore Sandalwood, Cardamom, Amber' },
-  { id: '3', name: 'Rose Noire Absolue', size: '100 ml', price: 165, notes: 'Damask Rose, Black Pepper, Patchouli' },
-  { id: '4', name: 'Ambre Mystique Parfum', size: '50 ml', price: 130, notes: 'Baltic Amber, Vanilla Bean, Benzoin' },
+  { id: '1', name: 'Oud Impérial Eau de Parfum', size: '100 ml', price: 3200, notes: 'Cambodian Oud, Incense, Leather' },
+  { id: '2', name: 'Santal Velours Extrait', size: '50 ml', price: 2400, notes: 'Mysore Sandalwood, Cardamom, Amber' },
+  { id: '3', name: 'Rose Noire Absolue', size: '100 ml', price: 2850, notes: 'Damask Rose, Black Pepper, Patchouli' },
+  { id: '4', name: 'Ambre Mystique Parfum', size: '50 ml', price: 2200, notes: 'Baltic Amber, Vanilla Bean, Benzoin' },
 ];

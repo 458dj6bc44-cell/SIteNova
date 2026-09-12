@@ -20,10 +20,10 @@ import {
 import { noireWhatsAppSteps, sampleNoireFragrances } from '../data/portfolioData';
 
 export const NoireWhatsAppSystem: React.FC = () => {
-  const [customerName, setCustomerName] = useState('Elena Rostova');
-  const [customerPhone, setCustomerPhone] = useState('+1 (555) 389-4421');
-  const [customerCity, setCustomerCity] = useState('Beverly Hills, CA');
-  const [customerAddress, setCustomerAddress] = useState('742 Evergreen Terrace, Apt 4B');
+  const [customerName, setCustomerName] = useState('Ahmed Mansour');
+  const [customerPhone, setCustomerPhone] = useState('01012345678');
+  const [customerCity, setCustomerCity] = useState('New Cairo, Cairo');
+  const [customerAddress, setCustomerAddress] = useState('Street 90 North, Villa 14, Fifth Settlement');
   const [selectedPerfumeId, setSelectedPerfumeId] = useState(sampleNoireFragrances[0].id);
   const [quantity, setQuantity] = useState(1);
   const [copied, setCopied] = useState(false);
@@ -37,12 +37,12 @@ export const NoireWhatsAppSystem: React.FC = () => {
 
 *Items Ordered:*
 • 1x ${currentFragrance.name} (${currentFragrance.size})
-   Price: $${currentFragrance.price} USD each (Qty: ${quantity})
+   Price: ${currentFragrance.price.toLocaleString()} EGP each (Qty: ${quantity})
 
 *Order Summary:*
-💰 *Subtotal:* $${totalPrice}.00 USD
-🚚 *Shipping:* Standard Delivery (Calculated)
-💵 *Total Amount:* $${totalPrice}.00 USD
+💰 *Subtotal:* ${totalPrice.toLocaleString()} EGP
+🚚 *Shipping:* Fast Delivery Across Egypt (Calculated)
+💵 *Total Amount:* ${totalPrice.toLocaleString()} EGP
 
 *Customer Delivery Information:*
 👤 *Full Name:* ${customerName || '[Name]'}
@@ -191,7 +191,7 @@ export const NoireWhatsAppSystem: React.FC = () => {
                       }`}
                     >
                       <div className="font-bold truncate">{f.name.split(' ')[0]}</div>
-                      <div className="text-[11px] text-emerald-400 font-medium">${f.price} • {f.size}</div>
+                      <div className="text-[11px] text-emerald-400 font-medium">{f.price.toLocaleString()} EGP • {f.size}</div>
                     </button>
                   ))}
                 </div>
