@@ -11,6 +11,7 @@ import {
   Copy,
   Check
 } from 'lucide-react';
+import { motion } from 'motion/react';
 import { agencyConfig, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
 
 export const ContactCTA: React.FC = () => {
@@ -30,12 +31,18 @@ export const ContactCTA: React.FC = () => {
   return (
     <section id="contact" className="py-24 border-t border-slate-800/80 relative overflow-hidden bg-[#07090C]">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[150px] pointer-events-none -z-10 rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[150px] pointer-events-none -z-10 rounded-full animate-pulse-glow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Main Card */}
-          <div className="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 hover:border-slate-700 p-8 sm:p-12 shadow-2xl relative overflow-hidden transition-colors"
+          >
             {/* Top Badge */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
@@ -75,7 +82,7 @@ export const ContactCTA: React.FC = () => {
                   <button
                     key={type}
                     onClick={() => setSelectedProjectType(type)}
-                    className={`px-3.5 py-2 rounded-xl text-xs font-medium border transition-all ${
+                    className={`px-3.5 py-2 rounded-xl text-xs font-medium border transition-all active:scale-95 ${
                       selectedProjectType === type
                         ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300 shadow-sm'
                         : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200'
@@ -90,12 +97,14 @@ export const ContactCTA: React.FC = () => {
             {/* Direct Contact Buttons */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
               {/* WhatsApp Button */}
-              <a
+              <motion.a
                 id="contact-btn-whatsapp"
                 href={dynamicWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/35 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-between"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group p-5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-colors shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/35 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-slate-950/10 flex items-center justify-center">
@@ -114,15 +123,17 @@ export const ContactCTA: React.FC = () => {
                   </div>
                 </div>
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+              </motion.a>
 
               {/* Instagram Button */}
-              <a
+              <motion.a
                 id="contact-btn-instagram"
                 href={agencyConfig.contact.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-5 rounded-2xl bg-slate-900/90 hover:bg-slate-850 border border-slate-800 hover:border-pink-500/50 text-white font-bold transition-all hover:shadow-xl hover:shadow-pink-500/10 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-between"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group p-5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-pink-500/50 text-white font-bold transition-colors shadow-lg hover:shadow-pink-500/10 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center">
@@ -138,7 +149,7 @@ export const ContactCTA: React.FC = () => {
                   </div>
                 </div>
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-slate-400 group-hover:text-pink-400" />
-              </a>
+              </motion.a>
             </div>
 
             {/* Email Contact alternative */}
@@ -148,15 +159,17 @@ export const ContactCTA: React.FC = () => {
                 <span>Prefer email? Send your project brief to:</span>
                 <span className="font-mono text-emerald-300 font-semibold">{agencyConfig.contact.email}</span>
               </div>
-              <button
+              <motion.button
                 onClick={copyEmail}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
               >
                 {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedEmail ? 'Copied' : 'Copy Email'}</span>
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

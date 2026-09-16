@@ -13,6 +13,7 @@ import {
   Tag,
   ArrowRight
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { gstoreProject } from '../data/portfolioData';
 
 export const ProjectGStore: React.FC = () => {
@@ -31,15 +32,21 @@ export const ProjectGStore: React.FC = () => {
   return (
     <section id="gstore" className="py-24 border-t border-slate-800/80 relative overflow-hidden bg-slate-950/40">
       {/* Background glow */}
-      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none animate-float-slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header section */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12"
+        >
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-              Case Study 01 • Sportswear E-Commerce
+              Case Study 02 • Sportswear E-Commerce
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight">
               GStore <span className="text-blue-400">Sportswear</span>
@@ -52,26 +59,34 @@ export const ProjectGStore: React.FC = () => {
 
           {/* Primary View Live Website CTA */}
           <div className="flex flex-wrap items-center gap-3">
-            <a
+            <motion.a
               id="gstore-view-live-btn"
               href={gstoreProject.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all hover:scale-[1.02] active:scale-[0.98]"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-colors group"
             >
               <span>View Live Website</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </motion.a>
             <span className="text-xs text-slate-400 block sm:inline">
               Deployed on Vercel: <span className="text-slate-300 font-mono">gstore-static.vercel.app</span>
             </span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Two-Column Showcase: Left Features & Specs, Right Interactive UI Preview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Highlighted Features Grid (6 cols) */}
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-5 space-y-6"
+          >
             <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800/90 shadow-xl backdrop-blur-sm">
               <h3 className="text-lg font-bold text-white font-heading mb-4 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-blue-400" />
@@ -80,9 +95,11 @@ export const ProjectGStore: React.FC = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
                 {gstoreProject.features.map((feature, idx) => (
-                  <div
+                  <motion.div
                     key={idx}
-                    className="flex items-start gap-3 p-2.5 rounded-xl bg-slate-950/40 border border-slate-800/60 hover:border-blue-500/30 transition-colors"
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex items-start gap-3 p-2.5 rounded-xl bg-slate-950/40 border border-slate-800/60 hover:border-blue-500/40 transition-colors"
                   >
                     <div className="mt-0.5 p-1 rounded bg-blue-500/10 text-blue-400 flex-shrink-0">
                       <CheckCircle2 className="w-3.5 h-3.5" />
@@ -90,13 +107,17 @@ export const ProjectGStore: React.FC = () => {
                     <span className="text-xs sm:text-sm text-slate-300 font-medium leading-snug">
                       {feature}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
             {/* Architecture Card */}
-            <div className="p-5 rounded-2xl bg-slate-900/40 border border-slate-800/60 flex flex-wrap items-center justify-between gap-4">
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+              className="p-5 rounded-2xl bg-slate-900/40 border border-slate-800/60 flex flex-wrap items-center justify-between gap-4"
+            >
               <div>
                 <span className="text-xs text-slate-400 block">Hosting & Architecture</span>
                 <span className="text-sm font-semibold text-white">100% Static React • Vercel Edge CDN</span>
@@ -108,12 +129,18 @@ export const ProjectGStore: React.FC = () => {
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column: Interactive UI Showcase Mockup Frame (7 cols) */}
-          <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl shadow-black/60">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-7"
+          >
+            <div className="rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 overflow-hidden shadow-2xl shadow-black/60 transition-colors duration-300">
               {/* Browser Mockup Top Bar */}
               <div className="px-4 py-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -417,7 +444,7 @@ export const ProjectGStore: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { ProjectVitalo } from './components/ProjectVitalo';
 import { ProjectGStore } from './components/ProjectGStore';
 import { ProjectNoire } from './components/ProjectNoire';
 import { NoireWhatsAppSystem } from './components/NoireWhatsAppSystem';
@@ -38,28 +39,38 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <a
+                  href="#vital0"
+                  className="px-3.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/40 text-xs font-semibold transition-colors flex items-center gap-1.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>01. VITALØ (Featured) ↓</span>
+                </a>
                 <a
                   href="#gstore"
                   className="px-3.5 py-1.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-medium transition-colors"
                 >
-                  01. GStore Sportswear ↓
+                  02. GStore Sportswear ↓
                 </a>
                 <a
                   href="#noire"
                   className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-medium transition-colors"
                 >
-                  02. NOIRÉ Parfums ↓
+                  03. NOIRÉ Parfums ↓
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Project 1: GStore Sportswear Showcase */}
+        {/* Project 1 (Featured): VITALØ Precision Supplements Showcase */}
+        <ProjectVitalo />
+
+        {/* Project 2: GStore Sportswear Showcase */}
         <ProjectGStore />
 
-        {/* Project 2: NOIRÉ Luxury Perfume Showcase */}
+        {/* Project 3: NOIRÉ Luxury Perfume Showcase */}
         <ProjectNoire />
 
         {/* Dedicated NOIRÉ WhatsApp Ordering System Innovation Breakdown & Simulator */}

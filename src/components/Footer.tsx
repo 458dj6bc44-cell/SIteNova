@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sparkles, ArrowUpRight, MessageCircle, Instagram, Mail, Heart } from 'lucide-react';
-import { agencyConfig, gstoreProject, noireProject, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
+import { agencyConfig, vitaloProject, gstoreProject, noireProject, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -73,6 +73,26 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
+                <a
+                  href="#vital0"
+                  className="hover:text-white transition-colors flex items-center justify-between"
+                >
+                  <span className="text-emerald-400 font-medium">VITALØ</span>
+                  <span className="text-[10px] text-emerald-400 font-mono">Featured</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={vitaloProject.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1 transition-colors"
+                >
+                  <span>vital0.vercel.app</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </li>
+              <li className="pt-2">
                 <a
                   href="#gstore"
                   className="hover:text-white transition-colors flex items-center justify-between"

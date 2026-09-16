@@ -38,6 +38,36 @@ export const getSiteNovaWhatsAppUrl = (message?: string): string => {
   return `https://web.whatsapp.com/send?phone=${agencyConfig.contact.whatsappIntNumber}&text=${encodeURIComponent(text)}`;
 };
 
+export const vitaloProject: Project = {
+  id: 'vital0',
+  name: 'VITALØ',
+  subtitle: 'Precision Performance Supplements & Direct WhatsApp E-Commerce',
+  category: 'E-Commerce / Supplement Store',
+  liveUrl: 'https://vital0.vercel.app/',
+  description:
+    'A premium, high-performance supplement e-commerce experience built with a strong focus on mobile UX, product presentation, performance, and direct WhatsApp ordering.',
+  accentColor: '#10b981', // Emerald / Neon Accent
+  badge: 'Featured Project • Precision Supplements',
+  features: [
+    'Mobile-first design with fluid thumb-navigation and rapid loading',
+    'Interactive product catalog with category filtering and instant search',
+    'Rich product detail pages with flavor and serving size variants',
+    'Persistent shopping cart powered by browser localStorage',
+    'Customer checkout form capturing name, phone, city, address, and notes',
+    'Structured 1-click WhatsApp order generation with transparent calculations',
+    'Tactile micro-interactions, scroll animations, and interactive FAQ drawers',
+    'Editorial and lifestyle sections showcasing brand storytelling',
+    '100% frontend static architecture with zero backend or database latency',
+    'Instant global edge hosting on Vercel with 0% payment gateway fees',
+  ],
+  techStack: ['React', 'Vite', 'Tailwind CSS', 'WhatsApp Ordering', 'Mobile-First', 'Vercel'],
+  stats: [
+    { label: 'Architecture', value: '100% Static' },
+    { label: 'Cart Storage', value: 'localStorage' },
+    { label: 'Checkout', value: 'WhatsApp Direct' },
+  ],
+};
+
 export const gstoreProject: Project = {
   id: 'gstore',
   name: 'GStore Sportswear',
@@ -299,3 +329,52 @@ export const sampleNoireFragrances = [
   { id: '3', name: 'Rose Noire Absolue', size: '100 ml', price: 2850, notes: 'Damask Rose, Black Pepper, Patchouli' },
   { id: '4', name: 'Ambre Mystique Parfum', size: '50 ml', price: 2200, notes: 'Baltic Amber, Vanilla Bean, Benzoin' },
 ];
+
+// Sample items for the VITALØ supplement showcase
+export const sampleVitaloProducts = [
+  {
+    id: 'vital-1',
+    name: 'ISO-Whey Native Isolate',
+    category: 'Protein',
+    tagline: 'Ultra-Pure Micro-Filtered Cold-Processed Whey (27g Protein/Serving)',
+    price: 1850,
+    size: '1.0 kg (33 Servings)',
+    flavors: ['Double Rich Chocolate', 'Madagascar Vanilla', 'Matcha Cream'],
+    badge: 'Best Seller',
+    rating: '4.9/5',
+  },
+  {
+    id: 'vital-2',
+    name: 'SURGE Pre-Workout Elite',
+    category: 'Energy',
+    tagline: 'Clinical 8g Citrulline Malate, Beta-Alanine & Pure Caffeine Anhydrous',
+    price: 1350,
+    size: '420g (30 Servings)',
+    flavors: ['Arctic Blue Raspberry', 'Sour Watermelon', 'Citrus Lime'],
+    badge: 'High Performance',
+    rating: '4.8/5',
+  },
+  {
+    id: 'vital-3',
+    name: 'Creapure® Micronized Creatine',
+    category: 'Strength',
+    tagline: '100% German-Manufactured Pure Micronized Creatine Monohydrate',
+    price: 980,
+    size: '500g (100 Servings)',
+    flavors: ['Unflavored Pure'],
+    badge: 'Essential',
+    rating: '5.0/5',
+  },
+  {
+    id: 'vital-4',
+    name: 'ELECTRO-MATRIX Hydration',
+    category: 'Hydration',
+    tagline: 'Optimal 4:1 Sodium-Potassium Bioavailable Hydration Electrolytes',
+    price: 750,
+    size: '30 Stick Packs',
+    flavors: ['Blood Orange', 'Lemon Ice', 'Yuzu Berry'],
+    badge: 'Electrolytes',
+    rating: '4.9/5',
+  },
+];
+

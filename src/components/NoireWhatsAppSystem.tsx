@@ -17,6 +17,7 @@ import {
   Phone,
   Building
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { noireWhatsAppSteps, sampleNoireFragrances } from '../data/portfolioData';
 
 export const NoireWhatsAppSystem: React.FC = () => {
@@ -68,11 +69,17 @@ export const NoireWhatsAppSystem: React.FC = () => {
   return (
     <section id="whatsapp-ordering" className="py-24 border-t border-slate-800 relative bg-[#080B10] overflow-hidden">
       {/* Glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none animate-pulse-glow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-4 shadow-sm">
             <MessageCircle className="w-4 h-4 fill-emerald-400 text-slate-950" />
             <span>Key Innovation: WhatsApp Social-Commerce System</span>
@@ -88,21 +95,23 @@ export const NoireWhatsAppSystem: React.FC = () => {
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-            <a
+            <motion.a
               id="noire-whatsapp-live-link"
               href="https://noire-store-five.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-500/20 hover:scale-[1.02]"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm transition-colors shadow-lg shadow-emerald-500/20 group"
             >
               <span>View Live Website</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </motion.a>
             <div className="text-xs text-slate-400 font-mono">
               Live URL: noire-store-five.vercel.app
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* 9-Step Visual Journey Breakdown */}
         <div className="mb-20">
@@ -113,10 +122,15 @@ export const NoireWhatsAppSystem: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {noireWhatsAppSteps.map((step) => (
-              <div
+            {noireWhatsAppSteps.map((step, idx) => (
+              <motion.div
                 key={step.stepNumber}
-                className="relative rounded-2xl bg-slate-900/60 border border-slate-800/80 p-5 hover:border-emerald-500/40 transition-all group hover:bg-slate-900/90"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                whileHover={{ y: -4 }}
+                className="relative rounded-2xl bg-slate-900/60 border border-slate-800/80 p-5 hover:border-emerald-500/40 transition-all group hover:bg-slate-900/90 shadow-lg"
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold flex items-center justify-center border border-emerald-500/30">
@@ -151,13 +165,19 @@ export const NoireWhatsAppSystem: React.FC = () => {
                     {step.highlight}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Interactive Live Simulator: Potential Clients Can Test the Exact NOIRÉ WhatsApp Engine */}
-        <div className="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 p-6 sm:p-10 shadow-2xl relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 p-6 sm:p-10 shadow-2xl relative"
+        >
           <div className="max-w-3xl mb-8">
             <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2">
               <Sparkles className="w-4 h-4" /> Live Interactive Demonstration
@@ -184,7 +204,7 @@ export const NoireWhatsAppSystem: React.FC = () => {
                     <button
                       key={f.id}
                       onClick={() => setSelectedPerfumeId(f.id)}
-                      className={`p-2.5 rounded-xl text-left border text-xs transition-all ${
+                      className={`p-2.5 rounded-xl text-left border text-xs transition-all active:scale-95 ${
                         selectedPerfumeId === f.id
                           ? 'bg-emerald-500/15 border-emerald-500 text-white shadow-sm'
                           : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
@@ -201,14 +221,14 @@ export const NoireWhatsAppSystem: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold text-xs"
+                      className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold text-xs active:scale-90 transition-transform"
                     >
                       -
                     </button>
                     <span className="text-xs font-bold text-white px-2">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold text-xs"
+                      className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold text-xs active:scale-90 transition-transform"
                     >
                       +
                     </button>
@@ -310,21 +330,25 @@ export const NoireWhatsAppSystem: React.FC = () => {
                   {/* Actions to Test or Copy */}
                   <div className="mt-6 pt-4 border-t border-[#202C33] space-y-2.5">
                     <div className="flex gap-2">
-                      <button
+                      <motion.button
                         onClick={handleTestWhatsApp}
-                        className="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0B141A] font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md active:scale-95"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0B141A] font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-md"
                       >
                         <Send className="w-3.5 h-3.5" />
                         <span>Test Send to WhatsApp</span>
-                      </button>
+                      </motion.button>
 
-                      <button
+                      <motion.button
                         onClick={copyToClipboard}
-                        className="py-2.5 px-3 rounded-xl bg-[#202C33] hover:bg-[#2A3942] text-[#E9EDEF] font-medium text-xs flex items-center justify-center gap-1.5 transition-all border border-[#2A3942]"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="py-2.5 px-3 rounded-xl bg-[#202C33] hover:bg-[#2A3942] text-[#E9EDEF] font-medium text-xs flex items-center justify-center gap-1.5 transition-colors border border-[#2A3942]"
                       >
                         {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                         <span>{copied ? 'Copied' : 'Copy'}</span>
-                      </button>
+                      </motion.button>
                     </div>
 
                     <p className="text-[11px] text-[#8696A0] text-center">
@@ -335,22 +359,43 @@ export const NoireWhatsAppSystem: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Why this solution converts higher for businesses */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            whileHover={{ y: -3 }}
+            className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center hover:border-emerald-500/30 transition-colors"
+          >
             <span className="text-emerald-400 font-bold text-sm block">0% Payment Merchant Fees</span>
             <span className="text-xs text-slate-400 mt-1 block">Save 3–5% on every single order by bypassing payment processing fees.</span>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            whileHover={{ y: -3 }}
+            className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center hover:border-emerald-500/30 transition-colors"
+          >
             <span className="text-emerald-400 font-bold text-sm block">Instant Direct Relationship</span>
             <span className="text-xs text-slate-400 mt-1 block">Upsell, recommend fragrances, and build repeat loyalty inside WhatsApp.</span>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            whileHover={{ y: -3 }}
+            className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center hover:border-emerald-500/30 transition-colors"
+          >
             <span className="text-emerald-400 font-bold text-sm block">100% Reliable Static Setup</span>
             <span className="text-xs text-slate-400 mt-1 block">Zero database to break, zero server downtime, and runs forever on Vercel.</span>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
