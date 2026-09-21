@@ -225,13 +225,28 @@ export const noireWhatsAppSteps: WhatsAppStep[] = [
    ========================================================================== */
 export const services: ServiceItem[] = [
   {
+    id: 'custom-websites',
+    title: 'CUSTOM WEBSITES',
+    tagline: 'Brand, studio, and bespoke business websites',
+    description:
+      'For businesses and creative brands that want something better than a template. Editorial typography, refined layouts, and thoughtful interactions that reflect who you actually are.',
+    deliverables: [
+      'Custom layout design tailored around your story and positioning',
+      'High-contrast typography and intentional negative space',
+      'Engineered to establish immediate trust and credibility',
+      'Fast, responsive, and seamless on every device',
+    ],
+    icon: 'Palette',
+    badge: 'Bespoke',
+  },
+  {
     id: 'ecommerce',
-    title: 'CUSTOM E-COMMERCE',
+    title: 'ECOMMERCE EXPERIENCES',
     tagline: 'Clean, fast online storefronts built to sell',
     description:
       'Custom-designed product catalogs, variant pickers, fast search, and shopping carts. Built to present your products clearly and turn visitors into paying customers.',
     deliverables: [
-      'Custom mobile-first layout designed for your products',
+      'Custom mobile-first layout designed for your specific catalog',
       'Instant product search & category filtering',
       'Multi-variant selectors (sizes, colors, packages)',
       'Smooth sliding shopping cart drawer with local persistence',
@@ -241,8 +256,8 @@ export const services: ServiceItem[] = [
     badge: 'Core Focus',
   },
   {
-    id: 'social-commerce',
-    title: 'WHATSAPP ORDERING STORES',
+    id: 'whatsapp-commerce',
+    title: 'WHATSAPP COMMERCE',
     tagline: 'Direct-to-chat checkout with zero transaction fees',
     description:
       'Customers select products, enter their delivery address, and send a pre-formatted order directly to your WhatsApp. You keep 100% of your margins with zero gateway fees.',
@@ -257,33 +272,18 @@ export const services: ServiceItem[] = [
     badge: 'Zero Fees',
   },
   {
-    id: 'brand-corporate',
-    title: 'BRAND & STUDIO WEBSITES',
-    tagline: 'Memorable websites for businesses with distinct taste',
+    id: 'mobile-first',
+    title: 'MOBILE-FIRST EXPERIENCES',
+    tagline: 'Modern React builds engineered for speed on handheld screens',
     description:
-      'For creative businesses and brands that want to stand out from generic templates. Editorial typography, refined layouts, and thoughtful interactions that reflect who you actually are.',
+      'Over 80% of your visitors browse on their phones. We build websites with modern static React deployed to global edge networks that load under a second on mobile.',
     deliverables: [
-      'Custom layout design tailored around your story',
-      'High-contrast typography and intentional whitespace',
-      'Designed to build trust from the very first scroll',
-      'Fast, responsive, and easy to navigate on every device',
-    ],
-    icon: 'Palette',
-    badge: 'Custom Crafted',
-  },
-  {
-    id: 'static-edge',
-    title: 'FAST STATIC WEB BUILDS',
-    tagline: 'Modern React builds with zero server headaches',
-    description:
-      'We build websites with modern static React and deploy them to global edge networks. They never crash, load in under a second, and don’t require monthly server maintenance.',
-    deliverables: [
-      'Sub-second global load times (<800ms) on edge CDNs',
+      'Sub-second load times (<800ms) on mobile cellular connections',
       'Zero fragile plugins that break after software updates',
-      'Zero database crashes or security vulnerabilities',
+      'Touch-friendly interactions and thumb-zone ergonomics',
       'No recurring monthly database or server hosting fees',
     ],
-    icon: 'Zap',
+    icon: 'Smartphone',
     badge: 'Edge Deployed',
   },
 ];

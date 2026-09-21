@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-[#66645F] hover:text-[#E5E0D6] flex items-center gap-0.5"
                   >
-                    <span>gstore-static.vercel.app</span>
+                    <span>gstore-zeta.vercel.app</span>
                     <ArrowUpRight className="w-3 h-3" />
                   </a>
                 </div>
