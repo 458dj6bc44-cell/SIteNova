@@ -11,10 +11,10 @@ import {
 import { agencyConfig, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
 
 export const ContactCTA: React.FC = () => {
-  const [selectedProjectType, setSelectedProjectType] = useState('E-Commerce Website');
+  const [selectedProjectType, setSelectedProjectType] = useState('E-Commerce Store');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const customMessage = `Hello SiteNova! I'm interested in commissioning a website (${selectedProjectType}) for my business. I'd like to learn more about your services.`;
+  const customMessage = `Hello SiteNova! I have a project in mind (${selectedProjectType}) for my business. I'd like to chat about building a website.`;
 
   const dynamicWhatsAppLink = getSiteNovaWhatsAppUrl(customMessage);
 
@@ -34,39 +34,40 @@ export const ContactCTA: React.FC = () => {
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#30312F]">
               <div className="flex items-center gap-3">
                 <span className="px-3 py-1 rounded-[4px] bg-[#C6532E] text-[#F2EFE8] font-mono text-[10px] font-bold uppercase tracking-widest">
-                  COMMISSIONS OPEN
+                  CURRENTLY AVAILABLE
                 </span>
                 <span className="text-xs font-mono text-[#E5E0D6]/60 uppercase tracking-wider">
-                  Direct Agency Contact
+                  Direct Studio Contact
                 </span>
               </div>
 
               <div className="flex items-center gap-2 text-xs font-mono text-[#E5E0D6]/70">
                 <Clock className="w-3.5 h-3.5 text-[#C6532E]" />
-                <span>Turnaround: {agencyConfig.contact.turnaroundTime}</span>
+                <span>Typical delivery: {agencyConfig.contact.turnaroundTime}</span>
               </div>
             </div>
 
             {/* Headline */}
             <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#F2EFE8] tracking-tight leading-[1.05]">
-              Initiate Your Digital <span className="text-[#C6532E]">Transformation</span>
+              Have a project in mind? <br />
+              <span className="text-[#C6532E]">Let's talk about your website.</span>
             </h2>
 
             <p className="text-[#E5E0D6] text-base sm:text-lg mt-4 leading-relaxed font-light max-w-2xl">
-              No endless intake forms. Connect directly with SiteNova's creative directors on WhatsApp or Instagram to discuss timelines, technical scope, and exact estimates.
+              Send us a message on WhatsApp. Tell us what you sell, what you need, and we'll figure out the rest. You talk directly with the people who will actually design and build it.
             </p>
 
             {/* Project Type Selector */}
             <div className="mt-10 pt-8 border-t border-[#30312F]">
               <span className="text-xs font-mono uppercase tracking-widest text-[#66645F] block mb-3">
-                Select Primary Engagement Focus:
+                What kind of website do you need?
               </span>
               <div className="flex flex-wrap gap-2 mb-8">
                 {[
-                  'Creative Studio / Agency Site',
-                  'E-Commerce Storefront',
-                  'Luxury WhatsApp Direct Store',
-                  'High-Performance Static Web App',
+                  'E-Commerce Store',
+                  'WhatsApp Ordering Store',
+                  'Brand / Studio Website',
+                  'Custom Web Build',
                 ].map(type => (
                   <button
                     key={type}
@@ -99,7 +100,7 @@ export const ContactCTA: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[10px] uppercase tracking-widest text-[#F2EFE8]/80 font-mono">
-                      Fastest Response
+                      Fastest response
                     </div>
                     <div className="text-base font-bold tracking-tight">
                       Message on WhatsApp
@@ -126,13 +127,13 @@ export const ContactCTA: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[10px] uppercase tracking-widest text-[#66645F] font-mono">
-                      Social Channel
+                      Social DM
                     </div>
                     <div className="text-base font-bold tracking-tight">
                       {agencyConfig.contact.instagramHandle}
                     </div>
                     <div className="text-xs text-[#E5E0D6]/60 font-mono">
-                      Follow & Direct Message
+                      Send a message
                     </div>
                   </div>
                 </div>
@@ -144,7 +145,7 @@ export const ContactCTA: React.FC = () => {
             <div className="mt-6 p-4 rounded-[6px] bg-[#20211F] border border-[#30312F] flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2.5 text-xs text-[#E5E0D6]/80 font-mono">
                 <Mail className="w-4 h-4 text-[#73765A]" />
-                <span>Brief submission:</span>
+                <span>Email directly:</span>
                 <span className="text-[#F2EFE8] font-bold">{agencyConfig.contact.email}</span>
               </div>
               <button

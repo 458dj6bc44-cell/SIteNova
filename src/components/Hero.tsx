@@ -46,12 +46,12 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 text-xs sm:text-sm font-bold tracking-widest uppercase text-[#66645F]"
           >
-            <span className="text-[#C6532E] font-extrabold font-mono">00 / INTRO</span>
+            <span className="text-[#C6532E] font-extrabold font-mono">00 / STUDIO</span>
             <span className="w-8 h-[1px] bg-[#66645F]/40" />
             <span className="text-[#171717]">SITENOVA WEB STUDIO</span>
             <span className="hidden sm:inline-block text-[#66645F]">•</span>
             <span className="hidden sm:inline-block font-medium text-[#73765A]">
-              ACCEPTING SELECTED CLIENT PROJECTS
+              SMALL TEAM • CUSTOM WEBSITES
             </span>
           </motion.div>
 
@@ -62,10 +62,11 @@ export const Hero: React.FC = () => {
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#171717] leading-[1.02] mb-8"
           >
             WE BUILD <br />
-            <span className="font-serif-display font-normal italic lowercase tracking-normal text-[#171717] pr-2">
-              digital
+            WEBSITES THAT <br />
+            <span className="font-serif-display font-normal italic lowercase tracking-normal text-[#C6532E] pr-2">
+              feel like
             </span>
-            <span className="font-sans-ui text-[#C6532E]">EXPERIENCES.</span>
+            <span className="font-sans-ui text-[#171717]">YOURS.</span>
           </motion.h1>
 
           {/* Editorial Supporting Description */}
@@ -75,9 +76,7 @@ export const Hero: React.FC = () => {
               id="hero-description"
               className="md:col-span-8 text-lg sm:text-xl md:text-2xl text-[#66645F] font-normal leading-relaxed"
             >
-              SiteNova is a professional web design and custom development agency. We engineer
-              high-converting websites, bespoke e-commerce experiences, direct WhatsApp commerce
-              systems, and high-performance digital experiences built for ambitious brands.
+              Small studio. Custom websites. Built around your business, your customers, and how you actually sell.
             </motion.p>
 
             <motion.div
@@ -85,11 +84,10 @@ export const Hero: React.FC = () => {
               className="md:col-span-4 border-l-2 border-[#C6532E] pl-5 py-1 flex flex-col gap-1 text-xs text-[#66645F]"
             >
               <span className="text-[#171717] font-bold uppercase tracking-wider">
-                Bespoke Engineering
+                Direct Communication
               </span>
               <p className="leading-relaxed">
-                100% static React architecture deployed to global edge networks with zero database
-                bloat and zero gateway commissions.
+                You talk directly with the people designing and coding your website. No account managers, no ticket queues, no unnecessary complexity.
               </p>
             </motion.div>
           </div>
@@ -130,19 +128,19 @@ export const Hero: React.FC = () => {
           >
             <div className="flex flex-col border-l border-[#E5E0D6] pl-4 sm:pl-6">
               <span className="font-serif-display text-2xl sm:text-3xl text-[#171717]">
-                100% Static
+                100% Custom
               </span>
               <span className="text-xs font-semibold uppercase tracking-wider text-[#66645F] mt-1">
-                Vercel & Edge Optimized
+                No generic templates
               </span>
             </div>
 
             <div className="flex flex-col border-l border-[#E5E0D6] pl-4 sm:pl-6">
               <span className="font-serif-display text-2xl sm:text-3xl text-[#C6532E]">
-                0% Gateway Fees
+                Direct Contact
               </span>
               <span className="text-xs font-semibold uppercase tracking-wider text-[#66645F] mt-1">
-                WhatsApp Direct Orders
+                Talk with the builders
               </span>
             </div>
 
@@ -151,7 +149,7 @@ export const Hero: React.FC = () => {
                 &lt; 1.0s Speed
               </span>
               <span className="text-xs font-semibold uppercase tracking-wider text-[#66645F] mt-1">
-                Zero Database Latency
+                Fast static React builds
               </span>
             </div>
 
@@ -160,7 +158,7 @@ export const Hero: React.FC = () => {
                 7–14 Days
               </span>
               <span className="text-xs font-semibold uppercase tracking-wider text-[#66645F] mt-1">
-                Fast Turnaround
+                From idea to live
               </span>
             </div>
           </motion.div>
@@ -170,29 +168,33 @@ export const Hero: React.FC = () => {
       {/* Fluid Editorial Studio Marquee Strip */}
       <div className="mt-20 pt-5 pb-5 border-t border-b border-[#E5E0D6] bg-[#E5E0D6]/30 overflow-hidden select-none">
         <div className="animate-marquee flex items-center gap-8 text-xs font-mono tracking-widest uppercase text-[#171717]">
-          <span>BESPOKE ART DIRECTION</span>
+          <span>SMALL STUDIO</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>100% STATIC REACT ARCHITECTURE</span>
+          <span>CUSTOM WEBSITES</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>VERCEL GLOBAL EDGE CDNs</span>
+          <span>DIRECT COMMUNICATION</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>0% PAYMENT GATEWAY COMMISSIONS</span>
+          <span>BUILT FOR HOW YOU SELL</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>DIRECT WHATSAPP CONVERSION ENGINES</span>
+          <span>100% STATIC REACT</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>SUB-SECOND EDGE RESPONSIVENESS</span>
+          <span>ZERO FLUFF</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>BESPOKE ART DIRECTION</span>
+          <span>NO TEMPLATES</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>100% STATIC REACT ARCHITECTURE</span>
+          <span>SMALL STUDIO</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>VERCEL GLOBAL EDGE CDNs</span>
+          <span>CUSTOM WEBSITES</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>0% PAYMENT GATEWAY COMMISSIONS</span>
+          <span>DIRECT COMMUNICATION</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>DIRECT WHATSAPP CONVERSION ENGINES</span>
+          <span>BUILT FOR HOW YOU SELL</span>
           <span className="text-[#C6532E]">✦</span>
-          <span>SUB-SECOND EDGE RESPONSIVENESS</span>
+          <span>100% STATIC REACT</span>
+          <span className="text-[#C6532E]">✦</span>
+          <span>ZERO FLUFF</span>
+          <span className="text-[#C6532E]">✦</span>
+          <span>NO TEMPLATES</span>
           <span className="text-[#C6532E]">✦</span>
         </div>
       </div>

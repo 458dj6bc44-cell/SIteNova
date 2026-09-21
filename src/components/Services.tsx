@@ -17,20 +17,20 @@ export const Services: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#E5E0D6]">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-3 text-xs font-mono uppercase tracking-widest text-[#66645F]">
-              <span className="text-[#C6532E] font-bold">CAPABILITIES & SCOPE</span>
+              <span className="text-[#C6532E] font-bold">WHAT WE BUILD</span>
               <span>•</span>
-              <span>AGENCY SERVICES</span>
+              <span>CUSTOM WEBSITES</span>
             </div>
             <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
-              Disciplines & Craft
+              What We Build
             </h2>
             <p className="text-lg text-[#66645F] font-normal leading-relaxed">
-              Every deployment is tailor-built for your brand's commercial requirements. No off-the-shelf templates, no plugin vulnerabilities, and no recurring hosting bloat.
+              Need a website for your business? We can build it. Tell us what you sell, and we'll figure out the rest. Custom design, direct communication, and no unnecessary complexity.
             </p>
           </div>
 
           <div className="text-xs font-mono text-[#73765A] uppercase tracking-wider">
-            Static • Edge • High-Conversion
+            Custom Code • No Templates • Fast Builds
           </div>
         </div>
 
@@ -84,7 +84,7 @@ export const Services: React.FC = () => {
                     href="#contact"
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#171717] hover:text-[#C6532E] transition-colors group/link"
                   >
-                    <span>Commission this service</span>
+                    <span>Talk to us about this</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
                   </a>
                 </div>

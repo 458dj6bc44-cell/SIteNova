@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-sm text-[#E5E0D6]/80 max-w-md leading-relaxed font-light">
-              Independent digital architecture and web design studio. We engineer bespoke, 100% static React storefronts and editorial brand flagships deployed on global edge infrastructure.
+              A small, specialized web studio designing and building custom websites. We work directly with every client from idea to launch, with zero templates and zero fluff.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a

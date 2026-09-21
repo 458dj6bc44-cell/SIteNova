@@ -3,28 +3,28 @@ import { Project, ServiceItem, ProcessStep, ValueProp, WhatsAppStep } from '../t
 export const agencyConfig = {
   name: 'SiteNova',
   studioName: 'SiteNova Web Studio',
-  tagline: 'Bespoke Web Design & Modern Social-Commerce Studio',
-  headline: 'WE BUILD DIGITAL EXPERIENCES.',
+  tagline: 'Small Web Studio • Custom Websites',
+  headline: 'WE BUILD WEBSITES THAT FEEL LIKE YOURS.',
   subheadline:
-    'SiteNova is a professional web design and custom development studio. We engineer high-converting websites, custom e-commerce experiences, social-commerce systems, and high-performance digital experiences.',
+    'Small studio. Custom websites. Built around your business, your customers, and how you actually sell.',
   contact: {
     whatsappNumber: '01555380043',
     whatsappIntNumber: '201555380043',
     whatsappDisplay: '01555380043',
     whatsappDefaultMessage:
-      "Hello SiteNova! I'm interested in getting a website for my business. I'd like to learn more about your services.",
+      "Hello SiteNova! I have a project in mind for my business. I'd like to chat about building a custom website.",
     instagramHandle: '@sitenovastudio',
     instagramUrl: 'https://instagram.com/sitenovastudio',
     email: 'hello@sitenova.design',
     location: 'Egypt & Worldwide',
-    status: 'Accepting Selected Client Projects',
+    status: 'Currently Taking on Projects',
     turnaroundTime: '7 to 14 Days Typical Delivery',
   },
   stats: [
-    { value: '100% Static', label: 'Vercel & Edge Optimized' },
-    { value: '0% Gateway Fees', label: 'WhatsApp Direct Orders' },
-    { value: '< 1.0s Speed', label: 'Zero Database Latency' },
-    { value: '7–14 Days', label: 'Fast Turnaround' },
+    { value: '100% Custom', label: 'No generic templates' },
+    { value: '0% Gateway Fees', label: 'Direct WhatsApp orders' },
+    { value: '< 1.0s Speed', label: 'Fast static React builds' },
+    { value: 'Direct Contact', label: 'Talk with the builders' },
   ],
 };
 
@@ -227,102 +227,102 @@ export const services: ServiceItem[] = [
   {
     id: 'ecommerce',
     title: 'CUSTOM E-COMMERCE',
-    tagline: 'High-converting online stores built for performance',
+    tagline: 'Clean, fast online storefronts built to sell',
     description:
-      'High-converting online stores built for performance. We engineer responsive digital storefronts with dynamic catalogs, variant pickers, instant search, and frictionless cart experiences.',
+      'Custom-designed product catalogs, variant pickers, fast search, and shopping carts. Built to present your products clearly and turn visitors into paying customers.',
     deliverables: [
-      'Product catalog & structured category architecture',
-      'Instant search and multi-attribute filtering',
-      'Multi-variant selectors (sizes, colors, materials)',
+      'Custom mobile-first layout designed for your products',
+      'Instant product search & category filtering',
+      'Multi-variant selectors (sizes, colors, packages)',
       'Smooth sliding shopping cart drawer with local persistence',
-      'Mobile-first touch interactions and conversion UI',
+      'Direct, frictionless path from browsing to buying',
     ],
     icon: 'Store',
-    badge: 'Core Specialty',
+    badge: 'Core Focus',
   },
   {
     id: 'social-commerce',
-    title: 'WHATSAPP COMMERCE',
-    tagline: 'Direct ordering without traditional payment gateway friction',
+    title: 'WHATSAPP ORDERING STORES',
+    tagline: 'Direct-to-chat checkout with zero transaction fees',
     description:
-      'Direct ordering without traditional payment gateway friction. Turn your site into a high-conversion social commerce funnel that formats customer orders and addresses directly into your WhatsApp inbox.',
+      'Customers select products, enter their delivery address, and send a pre-formatted order directly to your WhatsApp. You keep 100% of your margins with zero gateway fees.',
     deliverables: [
       'Automated formatted message generation with full cart details',
       'Intelligent routing: native WhatsApp on mobile, WhatsApp Web on desktop',
-      'Delivery address and contact information capture',
-      'Instant direct relationship with your buyers',
+      'Delivery address, phone, and customer contact capture',
+      'Direct 1-on-1 dialogue with your customers',
       '0% processing fees, ideal for boutique, luxury & local brands',
     ],
     icon: 'MessageCircle',
-    badge: 'High Conversion',
+    badge: 'Zero Fees',
   },
   {
     id: 'brand-corporate',
-    title: 'BRAND & CORPORATE',
-    tagline: 'Distinctive digital identities designed around the business',
+    title: 'BRAND & STUDIO WEBSITES',
+    tagline: 'Memorable websites for businesses with distinct taste',
     description:
-      'Distinctive digital identities designed around the business. From luxury boutiques to ambitious companies, we craft bespoke visual identities with editorial typography, layout balance, and responsive design.',
+      'For creative businesses and brands that want to stand out from generic templates. Editorial typography, refined layouts, and thoughtful interactions that reflect who you actually are.',
     deliverables: [
-      'Bespoke layout design tailored specifically to your market',
-      'High-contrast editorial typography and micro-interactions',
-      'Elevated visual hierarchy that commands authority and trust',
-      'Mobile-optimized layouts with intentional whitespace',
+      'Custom layout design tailored around your story',
+      'High-contrast typography and intentional whitespace',
+      'Designed to build trust from the very first scroll',
+      'Fast, responsive, and easy to navigate on every device',
     ],
     icon: 'Palette',
-    badge: 'Art Directed',
+    badge: 'Custom Crafted',
   },
   {
     id: 'static-edge',
-    title: 'STATIC EDGE ARCHITECTURE',
-    tagline: 'Fast, secure and lightweight websites deployed through Vercel',
+    title: 'FAST STATIC WEB BUILDS',
+    tagline: 'Modern React builds with zero server headaches',
     description:
-      'Fast, secure and lightweight websites deployed through Vercel. We deploy pure static React/Vite websites to Vercel global edge CDN, guaranteeing sub-second loads, zero database vulnerabilities, and zero recurring server fees.',
+      'We build websites with modern static React and deploy them to global edge networks. They never crash, load in under a second, and don’t require monthly server maintenance.',
     deliverables: [
-      'Sub-second first contentful paint (<800ms) worldwide',
-      'Vercel static edge distribution with 99.99% uptime',
-      'Zero database crashes, zero WordPress plugin bloat',
-      '100% free of expensive monthly database or server hosting fees',
+      'Sub-second global load times (<800ms) on edge CDNs',
+      'Zero fragile plugins that break after software updates',
+      'Zero database crashes or security vulnerabilities',
+      'No recurring monthly database or server hosting fees',
     ],
     icon: 'Zap',
-    badge: 'Vercel Optimized',
+    badge: 'Edge Deployed',
   },
 ];
 
 /* ==========================================================================
-   WHY SITENOVA (THE SITENOVA ADVANTAGE)
+   WHY SITENOVA (THE SMALL STUDIO ADVANTAGE)
    ========================================================================== */
 export const whyChooseSiteNova: ValueProp[] = [
   {
-    title: 'Direct-to-Customer Conversion',
+    title: 'Direct Communication',
     description:
-      'Traditional e-commerce loses up to 70% of customers at complex checkout gateways. Our WhatsApp ordering flow converts buyers directly with zero payment gateway friction.',
-    metric: '70%',
-    metricLabel: 'Less checkout abandonment',
+      'Instead of handing your project between account managers or separate departments, you communicate directly with the people designing and building your site.',
+    metric: '1:1',
+    metricLabel: 'Direct with builders',
     icon: 'Flame',
   },
   {
-    title: 'Blazing Fast Static Performance',
+    title: 'Custom Design, No Templates',
     description:
-      'Pure static React websites deployed to Vercel edge networks load in under 1 second worldwide, eliminating database lag and boosting buyer trust.',
+      'We build each website around your specific brand, your products, and how your customers actually buy. No recycled WordPress themes or generic cookie-cutter layouts.',
+    metric: '100%',
+    metricLabel: 'Custom tailored code',
+    icon: 'Gem',
+  },
+  {
+    title: 'Fast & Maintenance-Free',
+    description:
+      'Built with modern static React and deployed to edge networks. Your site loads in under a second worldwide, with zero plugin bloat and zero server bills.',
     metric: '<1s',
     metricLabel: 'Global page load time',
     icon: 'Gauge',
   },
   {
-    title: 'Zero Server Maintenance Costs',
+    title: 'Affordable vs Large Agencies',
     description:
-      'Unlike fragile WordPress installs that break on updates and require monthly server fees, our 100% static React sites run indefinitely with zero maintenance bills.',
-    metric: '0 EGP/mo',
-    metricLabel: 'Database & server fees',
+      'Because we are a lean, focused studio with zero corporate overhead, you get top-tier design and craftsmanship at a fraction of large agency retainers.',
+    metric: '0%',
+    metricLabel: 'Corporate overhead waste',
     icon: 'ShieldCheck',
-  },
-  {
-    title: 'Bespoke Craftsmanship',
-    description:
-      'Every project is customized to reflect your brand personality—from haute editorial (VÉREN) to precision supplements (VITALØ). Never recycled templates.',
-    metric: '100%',
-    metricLabel: 'Custom tailored code',
-    icon: 'Gem',
   },
 ];
 
@@ -332,35 +332,35 @@ export const whyChooseSiteNova: ValueProp[] = [
 export const processSteps: ProcessStep[] = [
   {
     number: '01',
-    title: 'Tell Us About Your Business',
+    title: "Tell Us What You're Building",
     description:
-      'Share your brand vision, target customers, product catalog or services, and aesthetic preferences through a direct WhatsApp consultation.',
+      'Send us a message on WhatsApp. Tell us what you sell, what kind of website you need, and any examples you like. We will give you honest thoughts and a clear plan.',
     duration: 'Day 1–2',
-    deliverable: 'Project scope & architecture roadmap',
+    deliverable: 'Scope, timeline & honest estimate',
   },
   {
     number: '02',
-    title: 'We Design Your Website',
+    title: 'We Design & Build Your Site',
     description:
-      'We craft bespoke editorial layouts, custom typography hierarchies, interactive components, and configure your ordering systems.',
-    duration: 'Day 3–7',
-    deliverable: 'Fully functional staging site',
+      'We get straight to work crafting your pages, styling layouts, writing clean code, and setting up your ordering flow. No endless delays or bureaucracy.',
+    duration: 'Day 3–8',
+    deliverable: 'Functional staging preview link',
   },
   {
     number: '03',
-    title: 'You Review & Refine',
+    title: 'You Test & We Refine',
     description:
-      'You interact with the live staging preview on both mobile and desktop, test the ordering experience, and request refinements until it is exact.',
-    duration: 'Day 8–10',
-    deliverable: 'Refinements & final approval',
+      'You click through the actual website on your phone and laptop, test the ordering flow, and tell us what you would like adjusted. We fine-tune every detail.',
+    duration: 'Day 9–11',
+    deliverable: 'Refined build ready for launch',
   },
   {
     number: '04',
     title: 'Your Website Goes Live',
     description:
-      'We connect your custom domain and deploy your production build to Vercel global edge network. Your business is live and ready for customers.',
-    duration: 'Day 11–14',
-    deliverable: 'Live Vercel deployment & ownership transfer',
+      'We connect your domain, deploy the production build to Vercel edge networks, and make sure everything is running fast. Your site is live and ready for customers.',
+    duration: 'Day 12–14',
+    deliverable: 'Live website & full handover',
   },
 ];
 

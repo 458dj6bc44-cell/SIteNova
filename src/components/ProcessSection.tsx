@@ -14,20 +14,20 @@ export const ProcessSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#E5E0D6]">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-3 text-xs font-mono uppercase tracking-widest text-[#66645F]">
-              <span className="text-[#C6532E] font-bold">METHODOLOGY</span>
+              <span className="text-[#C6532E] font-bold">HOW WE WORK</span>
               <span>•</span>
-              <span>4-STAGE SPRINT</span>
+              <span>FROM FIRST IDEA TO LIVE WEBSITE</span>
             </div>
             <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
-              From Concept to Edge in 14 Days
+              How We Work
             </h2>
             <p className="text-lg text-[#66645F] font-normal leading-relaxed">
-              We eliminate bureaucratic agency bloat. Every project moves through four rigorous, transparent phases from creative discovery to global Vercel deployment.
+              No unnecessary meetings or departments. You talk directly with the small team making your website, from the first message to the day your site goes live.
             </p>
           </div>
 
           <div className="text-xs font-mono text-[#73765A] uppercase tracking-wider">
-            7 to 14 Business Days
+            Direct & Collaborative • 7–14 Days
           </div>
         </div>
 
@@ -72,10 +72,10 @@ export const ProcessSection: React.FC = () => {
         <div className="mt-14 p-6 sm:p-8 rounded-[8px] bg-[#E5E0D6]/60 border border-[#D5CFC3] flex flex-col sm:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
           <div>
             <h4 className="text-xl font-serif-display font-normal text-[#171717]">
-              Ready to commence Stage 01?
+              Have a project in mind?
             </h4>
             <p className="text-xs text-[#66645F] mt-1">
-              Share your brand scope or catalog requirements. We reply with a detailed technical roadmap and proposal within 24 hours.
+              Tell us what you're building. We'll give you honest thoughts, transparent pricing, and a realistic timeline.
             </p>
           </div>
           <a
@@ -84,7 +84,7 @@ export const ProcessSection: React.FC = () => {
             rel="noopener noreferrer"
             className="px-6 py-3.5 rounded-[8px] bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm flex items-center gap-2 flex-shrink-0 group"
           >
-            <span>Start WhatsApp Consultation</span>
+            <span>Send Us a Message</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>

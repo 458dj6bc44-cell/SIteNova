@@ -30,13 +30,13 @@ export default function App() {
                 <div className="flex items-center gap-3 mb-2 text-xs font-mono uppercase tracking-widest text-[#66645F]">
                   <span className="text-[#C6532E] font-bold">PORTFOLIO INDEX</span>
                   <span>•</span>
-                  <span>PRODUCTION CASE STUDIES</span>
+                  <span>LIVE WEBSITES</span>
                 </div>
                 <h2 className="text-3xl sm:text-5xl font-serif-display font-normal text-[#171717] tracking-tight">
-                  Selected Agency Deployments
+                  Selected Work
                 </h2>
                 <p className="text-sm text-[#66645F] mt-2 max-w-xl font-normal leading-relaxed">
-                  Real, live production web architectures built on 100% static React and distributed across global edge CDNs.
+                  Real websites we designed and built. No templates. Explore the live builds below.
                 </p>
               </div>
 
