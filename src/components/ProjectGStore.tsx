@@ -17,9 +17,9 @@ import { motion, AnimatePresence } from 'motion/react';
 import { gstoreProject } from '../data/portfolioData';
 
 export const ProjectGStore: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'catalog' | 'variants' | 'cart' | 'mobile'>('catalog');
+  const [activeTab, setActiveTab] = useState<'catalog' | 'variants' | 'cart'>('catalog');
   const [selectedSize, setSelectedSize] = useState<'S' | 'M' | 'L' | 'XL'>('M');
-  const [selectedColor, setSelectedColor] = useState<'black' | 'blue' | 'volt'>('black');
+  const [selectedColor, setSelectedColor] = useState<'black' | 'blue' | 'olive'>('black');
   const [cartCount, setCartCount] = useState(2);
   const [sampleAdded, setSampleAdded] = useState(false);
 
@@ -30,156 +30,134 @@ export const ProjectGStore: React.FC = () => {
   };
 
   return (
-    <section id="gstore" className="py-24 border-t border-slate-800/80 relative overflow-hidden bg-slate-950/40">
-      {/* Background glow */}
-      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none animate-float-slow" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gstore" className="py-24 sm:py-32 border-b border-[#E5E0D6] bg-[#E5E0D6]/40 text-[#171717] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Header section */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12"
-        >
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-              Case Study 02 • Sportswear E-Commerce
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#D5CFC3]">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-3 text-xs font-mono uppercase tracking-widest text-[#66645F]">
+              <span className="text-[#C6532E] font-bold">PROJECT 03 / 04</span>
+              <span>•</span>
+              <span className="text-[#171717] font-semibold">{gstoreProject.category}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight">
-              GStore <span className="text-blue-400">Sportswear</span>
+            <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
+              GStore Sportswear
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg mt-3 leading-relaxed">
-              A high-octane sportswear e-commerce storefront engineered with instant responsive filtering,
-              interactive variant selectors, live shopping cart, and a modern athletic UI.
+            <p className="text-lg text-[#66645F] font-normal leading-relaxed">
+              {gstoreProject.description}
             </p>
           </div>
 
           {/* Primary View Live Website CTA */}
-          <div className="flex flex-wrap items-center gap-3">
-            <motion.a
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a
               id="gstore-view-live-btn"
               href={gstoreProject.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-colors group"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-[8px] bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm group"
             >
-              <span>View Live Website</span>
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </motion.a>
-            <span className="text-xs text-slate-400 block sm:inline">
-              Deployed on Vercel: <span className="text-slate-300 font-mono">gstore-static.vercel.app</span>
-            </span>
+              <span>VIEW LIVE PROJECT</span>
+              <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
-        </motion.div>
+        </div>
 
         {/* Two-Column Showcase: Left Features & Specs, Right Interactive UI Preview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Highlighted Features Grid (6 cols) */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-5 space-y-6"
-          >
-            <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800/90 shadow-xl backdrop-blur-sm">
-              <h3 className="text-lg font-bold text-white font-heading mb-4 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-blue-400" />
-                <span>Highlighted E-Commerce Features</span>
+          {/* Left Column: Highlighted Features Grid (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="p-6 rounded-[8px] bg-[#F2EFE8] border border-[#D5CFC3]">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#171717] mb-4 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-[#C6532E]" />
+                <span>Performance Storefront Features</span>
               </h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+
+              <div className="space-y-2.5">
                 {gstoreProject.features.map((feature, idx) => (
-                  <motion.div
+                  <div
                     key={idx}
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-start gap-3 p-2.5 rounded-xl bg-slate-950/40 border border-slate-800/60 hover:border-blue-500/40 transition-colors"
+                    className="flex items-start gap-3 p-3 rounded-[6px] bg-white border border-[#E5E0D6] text-xs text-[#171717] font-medium leading-snug"
                   >
-                    <div className="mt-0.5 p-1 rounded bg-blue-500/10 text-blue-400 flex-shrink-0">
+                    <div className="mt-0.5 text-[#C6532E] flex-shrink-0">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-xs sm:text-sm text-slate-300 font-medium leading-snug">
-                      {feature}
-                    </span>
-                  </motion.div>
+                    <span>{feature}</span>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Architecture Card */}
-            <motion.div
-              whileHover={{ y: -2 }}
-              transition={{ duration: 0.2 }}
-              className="p-5 rounded-2xl bg-slate-900/40 border border-slate-800/60 flex flex-wrap items-center justify-between gap-4"
-            >
-              <div>
-                <span className="text-xs text-slate-400 block">Hosting & Architecture</span>
-                <span className="text-sm font-semibold text-white">100% Static React • Vercel Edge CDN</span>
+            <div className="p-6 rounded-[8px] bg-[#F2EFE8] border border-[#D5CFC3] space-y-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#66645F] block">
+                    Hosting & Architecture
+                  </span>
+                  <span className="text-sm font-bold text-[#171717]">
+                    100% Static React • Vercel Global Edge
+                  </span>
+                </div>
+                <span className="text-[10px] px-2 py-0.5 rounded bg-[#C6532E]/15 text-[#C6532E] font-mono font-bold">
+                  &lt; 0.9s FCP
+                </span>
               </div>
-              <div className="flex gap-2">
-                {['React 19', 'Vite', 'Tailwind', 'Zero Backend'].map((tech, i) => (
-                  <span key={i} className="text-[11px] font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700/60">
+              <div className="flex flex-wrap gap-1.5 pt-2">
+                {['React 19', 'TypeScript', 'Tailwind', 'Zero Backend Overhead'].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-[11px] font-mono px-2.5 py-1 rounded-[4px] bg-white text-[#66645F] border border-[#D5CFC3]"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right Column: Interactive UI Showcase Mockup Frame (7 cols) */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-7"
-          >
-            <div className="rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 overflow-hidden shadow-2xl shadow-black/60 transition-colors duration-300">
+          <div className="lg:col-span-7">
+            <div className="rounded-[8px] bg-white border border-[#D5CFC3] shadow-lg overflow-hidden flex flex-col">
               {/* Browser Mockup Top Bar */}
-              <div className="px-4 py-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+              <div className="px-5 py-3.5 bg-[#E5E0D6] border-b border-[#D5CFC3] flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 text-xs font-mono text-slate-400 hidden sm:inline">
-                    gstore-static.vercel.app
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#66645F]/40" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#66645F]/40" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#66645F]/40" />
+                  <span className="ml-2 text-xs font-mono text-[#66645F] hidden sm:inline">
+                    gstore-static.vercel.app • Performance Sportswear
                   </span>
                 </div>
 
                 {/* View switcher tabs */}
-                <div className="flex items-center gap-1 bg-slate-900 p-1 rounded-lg border border-slate-800">
+                <div className="flex items-center gap-1">
                   <button
                     onClick={() => setActiveTab('catalog')}
-                    className={`px-2.5 py-1 rounded text-xs font-medium transition-all ${
+                    className={`px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider transition-all ${
                       activeTab === 'catalog'
-                        ? 'bg-blue-600 text-white shadow'
-                        : 'text-slate-400 hover:text-white'
+                        ? 'bg-[#171717] text-[#F2EFE8]'
+                        : 'text-[#66645F] hover:text-[#171717]'
                     }`}
                   >
-                    Catalog & Filter
+                    Catalog
                   </button>
                   <button
                     onClick={() => setActiveTab('variants')}
-                    className={`px-2.5 py-1 rounded text-xs font-medium transition-all ${
+                    className={`px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider transition-all ${
                       activeTab === 'variants'
-                        ? 'bg-blue-600 text-white shadow'
-                        : 'text-slate-400 hover:text-white'
+                        ? 'bg-[#171717] text-[#F2EFE8]'
+                        : 'text-[#66645F] hover:text-[#171717]'
                     }`}
                   >
                     Variant Picker
                   </button>
                   <button
                     onClick={() => setActiveTab('cart')}
-                    className={`px-2.5 py-1 rounded text-xs font-medium transition-all ${
+                    className={`px-3 py-1 rounded-[6px] text-xs font-bold uppercase tracking-wider transition-all ${
                       activeTab === 'cart'
-                        ? 'bg-blue-600 text-white shadow'
-                        : 'text-slate-400 hover:text-white'
+                        ? 'bg-[#171717] text-[#F2EFE8]'
+                        : 'text-[#66645F] hover:text-[#171717]'
                     }`}
                   >
                     Cart ({cartCount})
@@ -188,91 +166,89 @@ export const ProjectGStore: React.FC = () => {
               </div>
 
               {/* Mockup Canvas Screen */}
-              <div className="p-5 sm:p-6 bg-[#0B0F17] min-h-[440px] flex flex-col justify-between">
+              <div className="p-5 sm:p-6 min-h-[400px] flex flex-col justify-between bg-[#FAFAF8]">
                 {activeTab === 'catalog' && (
-                  <div className="space-y-4 animate-in fade-in duration-200">
-                    {/* Top filter bar simulation */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-white">
-                        <Shirt className="w-4 h-4 text-blue-400" />
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#E5E0D6]">
+                      <div className="flex items-center gap-2 text-xs font-bold text-[#171717] uppercase tracking-wider">
+                        <Shirt className="w-4 h-4 text-[#C6532E]" />
                         <span>Sportswear Catalog</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-400 font-medium border border-blue-500/30">
+                        <span className="text-[11px] px-2.5 py-1 rounded-[4px] bg-[#171717] text-[#F2EFE8] font-bold">
                           Men
                         </span>
-                        <span className="text-[11px] px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 font-medium">
+                        <span className="text-[11px] px-2.5 py-1 rounded-[4px] bg-[#E5E0D6] text-[#66645F] font-medium">
                           Women
                         </span>
-                        <span className="text-[11px] px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 font-medium">
+                        <span className="text-[11px] px-2.5 py-1 rounded-[4px] bg-[#E5E0D6] text-[#66645F] font-medium">
                           Footwear
                         </span>
                       </div>
                     </div>
 
                     {/* Product Grid Mockup */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-                      {/* Product 1 */}
-                      <div className="group rounded-xl bg-slate-900/90 border border-slate-800 p-3 hover:border-blue-500/50 transition-all">
-                        <div className="aspect-square rounded-lg bg-gradient-to-tr from-slate-950 to-blue-950/40 p-3 flex flex-col items-center justify-center relative overflow-hidden">
-                          <div className="absolute top-2 left-2 text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500 text-slate-950">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div
+                        onClick={() => setActiveTab('variants')}
+                        className="rounded-[6px] bg-white border border-[#E5E0D6] hover:border-[#171717] p-3 cursor-pointer transition-all"
+                      >
+                        <div className="aspect-square rounded-[4px] bg-[#F2EFE8] p-3 flex flex-col items-center justify-center relative">
+                          <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#C6532E] text-white">
                             NEW
-                          </div>
-                          <div className="w-16 h-16 rounded-full bg-blue-500/20 blur-xl absolute" />
-                          <Shirt className="w-10 h-10 text-blue-400 relative z-10 group-hover:scale-110 transition-transform" />
+                          </span>
+                          <Shirt className="w-10 h-10 text-[#171717]" />
                         </div>
                         <div className="mt-2.5">
-                          <span className="text-[10px] text-slate-500 uppercase tracking-wider">AeroTech Dry</span>
-                          <h4 className="text-xs font-bold text-white truncate">Pro Training Tee</h4>
+                          <span className="text-[9px] text-[#66645F] uppercase tracking-wider font-mono">AeroTech</span>
+                          <h4 className="text-xs font-bold text-[#171717] truncate">Pro Training Tee</h4>
                           <div className="mt-1 flex items-center justify-between">
-                            <span className="text-xs font-bold text-blue-400">850 EGP</span>
-                            <span className="text-[10px] text-slate-400">Sizes S–XL</span>
+                            <span className="text-xs font-bold text-[#C6532E] font-mono">850 EGP</span>
+                            <span className="text-[10px] text-[#66645F]">Sizes S–XL</span>
                           </div>
                         </div>
                       </div>
 
-                      {/* Product 2 */}
-                      <div className="group rounded-xl bg-slate-900/90 border border-slate-800 p-3 hover:border-blue-500/50 transition-all">
-                        <div className="aspect-square rounded-lg bg-gradient-to-tr from-slate-950 to-emerald-950/40 p-3 flex flex-col items-center justify-center relative overflow-hidden">
-                          <div className="w-16 h-16 rounded-full bg-emerald-500/20 blur-xl absolute" />
-                          <div className="text-emerald-400 font-extrabold text-lg tracking-wider relative z-10 group-hover:scale-110 transition-transform">
-                            RUN-X
-                          </div>
+                      <div
+                        onClick={() => setActiveTab('variants')}
+                        className="rounded-[6px] bg-white border border-[#E5E0D6] hover:border-[#171717] p-3 cursor-pointer transition-all"
+                      >
+                        <div className="aspect-square rounded-[4px] bg-[#F2EFE8] p-3 flex flex-col items-center justify-center relative">
+                          <span className="font-serif-display text-xl font-bold text-[#73765A]">RUN-X</span>
                         </div>
                         <div className="mt-2.5">
-                          <span className="text-[10px] text-slate-500 uppercase tracking-wider">Footwear</span>
-                          <h4 className="text-xs font-bold text-white truncate">Velocity Runner V2</h4>
+                          <span className="text-[9px] text-[#66645F] uppercase tracking-wider font-mono">Footwear</span>
+                          <h4 className="text-xs font-bold text-[#171717] truncate">Velocity Runner V2</h4>
                           <div className="mt-1 flex items-center justify-between">
-                            <span className="text-xs font-bold text-blue-400">2,450 EGP</span>
-                            <span className="text-[10px] text-emerald-400">In Stock</span>
+                            <span className="text-xs font-bold text-[#171717] font-mono">2,450 EGP</span>
+                            <span className="text-[10px] text-[#73765A] font-medium">In Stock</span>
                           </div>
                         </div>
                       </div>
 
-                      {/* Product 3 */}
-                      <div className="group rounded-xl bg-slate-900/90 border border-slate-800 p-3 hover:border-blue-500/50 transition-all">
-                        <div className="aspect-square rounded-lg bg-gradient-to-tr from-slate-950 to-amber-950/40 p-3 flex flex-col items-center justify-center relative overflow-hidden">
-                          <div className="w-16 h-16 rounded-full bg-amber-500/20 blur-xl absolute" />
-                          <div className="text-amber-400 font-extrabold text-sm tracking-wider relative z-10 group-hover:scale-110 transition-transform">
-                            HYDRO
-                          </div>
+                      <div
+                        onClick={() => setActiveTab('variants')}
+                        className="rounded-[6px] bg-white border border-[#E5E0D6] hover:border-[#171717] p-3 cursor-pointer transition-all"
+                      >
+                        <div className="aspect-square rounded-[4px] bg-[#F2EFE8] p-3 flex flex-col items-center justify-center relative">
+                          <span className="font-serif-display text-xl font-bold text-[#C6532E]">HYDRO</span>
                         </div>
                         <div className="mt-2.5">
-                          <span className="text-[10px] text-slate-500 uppercase tracking-wider">Outerwear</span>
-                          <h4 className="text-xs font-bold text-white truncate">StormShield Windbreaker</h4>
+                          <span className="text-[9px] text-[#66645F] uppercase tracking-wider font-mono">Outerwear</span>
+                          <h4 className="text-xs font-bold text-[#171717] truncate">StormShield Jacket</h4>
                           <div className="mt-1 flex items-center justify-between">
-                            <span className="text-xs font-bold text-blue-400">1,650 EGP</span>
-                            <span className="text-[10px] text-slate-400">Waterproof</span>
+                            <span className="text-xs font-bold text-[#171717] font-mono">1,650 EGP</span>
+                            <span className="text-[10px] text-[#66645F]">Waterproof</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-between text-xs text-blue-300">
-                      <span>✨ Instant client-side search & filtering with zero delay</span>
+                    <div className="p-3 rounded-[6px] bg-[#E5E0D6]/60 border border-[#D5CFC3] flex items-center justify-between text-xs text-[#171717]">
+                      <span>Instant client-side catalog filtering with zero network lag</span>
                       <button
                         onClick={() => setActiveTab('variants')}
-                        className="font-semibold underline hover:text-white flex items-center gap-1"
+                        className="font-bold text-[#C6532E] hover:underline"
                       >
                         Try variant picker →
                       </button>
@@ -281,75 +257,73 @@ export const ProjectGStore: React.FC = () => {
                 )}
 
                 {activeTab === 'variants' && (
-                  <div className="space-y-4 animate-in fade-in duration-200">
-                    <div className="flex flex-col sm:flex-row gap-5 items-center p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                      {/* Product Visual */}
-                      <div className="w-32 h-32 rounded-xl bg-gradient-to-br from-slate-950 to-blue-950 flex items-center justify-center flex-shrink-0 border border-slate-800 relative">
-                        <Shirt className={`w-16 h-16 transition-all duration-300 ${
+                  <div className="space-y-4">
+                    <div className="flex flex-col sm:flex-row gap-5 items-center p-4 rounded-[6px] bg-[#F2EFE8] border border-[#D5CFC3]">
+                      <div className="w-28 h-28 rounded-[6px] bg-white flex items-center justify-center border border-[#D5CFC3] relative">
+                        <Shirt className={`w-14 h-14 transition-colors ${
                           selectedColor === 'black'
-                            ? 'text-slate-200'
+                            ? 'text-[#171717]'
                             : selectedColor === 'blue'
-                            ? 'text-blue-400'
-                            : 'text-lime-400'
+                            ? 'text-[#2563EB]'
+                            : 'text-[#73765A]'
                         }`} />
-                        <span className="absolute bottom-2 text-[10px] font-mono text-slate-400 uppercase">
-                          {selectedColor} / Size {selectedSize}
+                        <span className="absolute bottom-1.5 text-[9px] font-mono text-[#66645F] uppercase">
+                          {selectedColor} / {selectedSize}
                         </span>
                       </div>
 
-                      {/* Variant Options Form */}
                       <div className="flex-1 w-full space-y-3">
                         <div>
-                          <span className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
-                            Select Color Variant:
+                          <span className="text-xs text-[#66645F] uppercase tracking-wider font-bold block mb-1">
+                            Colorway:
                           </span>
-                          <div className="flex items-center gap-2 mt-1.5">
+                          <div className="flex items-center gap-2">
                             <button
                               onClick={() => setSelectedColor('black')}
-                              className={`px-3 py-1 rounded-lg text-xs font-medium border transition-all ${
+                              className={`px-3 py-1 rounded-[4px] text-xs font-medium border transition-all ${
                                 selectedColor === 'black'
-                                  ? 'bg-slate-800 border-white text-white'
-                                  : 'bg-slate-900 border-slate-700 text-slate-400'
+                                  ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
+                                  : 'bg-white text-[#171717] border-[#D5CFC3]'
                               }`}
                             >
                               Obsidian
                             </button>
                             <button
                               onClick={() => setSelectedColor('blue')}
-                              className={`px-3 py-1 rounded-lg text-xs font-medium border transition-all ${
+                              className={`px-3 py-1 rounded-[4px] text-xs font-medium border transition-all ${
                                 selectedColor === 'blue'
-                                  ? 'bg-blue-600/30 border-blue-400 text-blue-300'
-                                  : 'bg-slate-900 border-slate-700 text-slate-400'
+                                  ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
+                                  : 'bg-white text-[#171717] border-[#D5CFC3]'
                               }`}
                             >
                               Electric Blue
                             </button>
                             <button
-                              onClick={() => setSelectedColor('volt')}
-                              className={`px-3 py-1 rounded-lg text-xs font-medium border transition-all ${
-                                selectedColor === 'volt'
-                                  ? 'bg-lime-500/20 border-lime-400 text-lime-300'
-                                  : 'bg-slate-900 border-slate-700 text-slate-400'
+                              onClick={() => setSelectedColor('olive')}
+                              className={`px-3 py-1 rounded-[4px] text-xs font-medium border transition-all ${
+                                selectedColor === 'olive'
+                                  ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
+                                  : 'bg-white text-[#171717] border-[#D5CFC3]'
                               }`}
                             >
-                              Volt Lime
+                              Dusty Olive
                             </button>
                           </div>
                         </div>
 
                         <div>
-                          <span className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
-                            Select Size:
+                          <span className="text-xs text-[#66645F] uppercase tracking-wider font-bold block mb-1">
+                            Size:
                           </span>
-                          <div className="flex items-center gap-2 mt-1.5">
+                          <div className="flex items-center gap-2">
                             {(['S', 'M', 'L', 'XL'] as const).map(size => (
                               <button
                                 key={size}
                                 onClick={() => setSelectedSize(size)}
-                                className={`w-9 h-8 rounded-lg text-xs font-bold border transition-all ${
+                                className={`w-8 h-8 rounded-[4px] text-xs font-bold border transition-all ${
                                   selectedSize === size
-                                    ? 'bg-blue-600 border-blue-400 text-white shadow-md'
-                                    : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                                    ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
+                                    : 'bg-white text-[#171717] border-[#D5CFC3]'
                                 }`}
                               >
                                 {size}
@@ -359,10 +333,10 @@ export const ProjectGStore: React.FC = () => {
                         </div>
 
                         <div className="pt-2 flex items-center justify-between">
-                          <span className="text-base font-bold text-white">850 EGP</span>
+                          <span className="text-base font-bold text-[#171717] font-mono">850 EGP</span>
                           <button
                             onClick={handleAddToCart}
-                            className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold tracking-wide transition-all shadow-md shadow-blue-500/30 active:scale-95 flex items-center gap-1.5"
+                            className="px-4 py-2 rounded-[6px] bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8] text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5"
                           >
                             <ShoppingCart className="w-3.5 h-3.5" />
                             <span>{sampleAdded ? 'Added to Cart!' : 'Add to Cart'}</span>
@@ -370,73 +344,58 @@ export const ProjectGStore: React.FC = () => {
                         </div>
                       </div>
                     </div>
-
-                    <p className="text-xs text-slate-400 text-center">
-                      Interactive variant switching handles instant SKU state with smooth CSS animations.
-                    </p>
                   </div>
                 )}
 
                 {activeTab === 'cart' && (
-                  <div className="space-y-3 animate-in fade-in duration-200">
-                    <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-blue-950 flex items-center justify-center text-blue-400 font-bold text-xs">
-                          GS
-                        </div>
-                        <div>
-                          <h5 className="text-xs font-bold text-white">Pro Training Tee</h5>
-                          <span className="text-[11px] text-slate-400">Size: {selectedSize} • Color: {selectedColor}</span>
-                        </div>
+                  <div className="space-y-3">
+                    <div className="p-3.5 rounded-[6px] bg-[#F2EFE8] border border-[#D5CFC3] flex items-center justify-between">
+                      <div>
+                        <h5 className="text-xs font-bold text-[#171717]">Pro Training Tee</h5>
+                        <span className="text-[11px] text-[#66645F]">Size: {selectedSize} • Color: {selectedColor}</span>
                       </div>
                       <div className="text-right">
-                        <span className="text-xs font-bold text-white">850 EGP</span>
-                        <span className="text-[10px] text-slate-400 block">Qty: 1</span>
+                        <span className="text-xs font-bold text-[#171717] font-mono">850 EGP</span>
+                        <span className="text-[10px] text-[#66645F] block">Qty: 1</span>
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 font-bold text-xs">
-                          VR
-                        </div>
-                        <div>
-                          <h5 className="text-xs font-bold text-white">Velocity Runner V2</h5>
-                          <span className="text-[11px] text-slate-400">Size: US 10.5 • Phantom Black</span>
-                        </div>
+                    <div className="p-3.5 rounded-[6px] bg-[#F2EFE8] border border-[#D5CFC3] flex items-center justify-between">
+                      <div>
+                        <h5 className="text-xs font-bold text-[#171717]">Velocity Runner V2</h5>
+                        <span className="text-[11px] text-[#66645F]">Size: US 10.5 • Phantom Black</span>
                       </div>
                       <div className="text-right">
-                        <span className="text-xs font-bold text-white">2,450 EGP</span>
-                        <span className="text-[10px] text-slate-400 block">Qty: 1</span>
+                        <span className="text-xs font-bold text-[#171717] font-mono">2,450 EGP</span>
+                        <span className="text-[10px] text-[#66645F] block">Qty: 1</span>
                       </div>
                     </div>
 
-                    {/* Cart Summary */}
-                    <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-2">
-                      <div className="flex justify-between text-xs text-slate-400">
+                    <div className="p-3.5 rounded-[6px] bg-[#E5E0D6]/60 border border-[#D5CFC3] space-y-1.5 text-xs">
+                      <div className="flex justify-between text-[#66645F]">
                         <span>Subtotal:</span>
-                        <span className="text-white font-medium">3,300 EGP</span>
+                        <span className="text-[#171717] font-medium font-mono">3,300 EGP</span>
                       </div>
-                      <div className="flex justify-between text-xs text-slate-400">
+                      <div className="flex justify-between text-[#66645F]">
                         <span>Shipping:</span>
-                        <span className="text-emerald-400 font-medium">Free Across Egypt</span>
+                        <span className="text-[#73765A] font-medium">Free Across Egypt</span>
                       </div>
-                      <div className="pt-2 border-t border-slate-800 flex justify-between text-sm font-bold text-white">
+                      <div className="pt-2 border-t border-[#D5CFC3] flex justify-between font-bold text-[#171717]">
                         <span>Total:</span>
-                        <span className="text-blue-400 font-bold">3,300 EGP</span>
+                        <span className="text-[#C6532E] font-bold font-mono">3,300 EGP</span>
                       </div>
                     </div>
                   </div>
                 )}
 
                 {/* Bottom link to actual live deployment */}
-                <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
-                  <span>Experience the full sportswear catalog on the live site:</span>
+                <div className="pt-4 border-t border-[#E5E0D6] flex flex-wrap items-center justify-between gap-3 text-xs text-[#66645F]">
+                  <span>Experience the sportswear catalog on the live site:</span>
                   <a
                     href={gstoreProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                    className="inline-flex items-center gap-1.5 text-[#171717] hover:text-[#C6532E] font-bold transition-colors"
                   >
                     <span>Open Live GStore Experience</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -444,7 +403,7 @@ export const ProjectGStore: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

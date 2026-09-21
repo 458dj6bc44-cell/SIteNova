@@ -1,6 +1,5 @@
 import React from 'react';
 import { Store, MessageCircle, Palette, Zap, ArrowRight, Check } from 'lucide-react';
-import { motion } from 'motion/react';
 import { services } from '../data/portfolioData';
 
 const iconMap = {
@@ -12,90 +11,84 @@ const iconMap = {
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 border-t border-slate-800/80 bg-slate-950/70 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-            What We Do
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight mt-2">
-            Engineered for <span className="text-emerald-400">Conversion</span> & Speed
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg mt-3">
-            Every website we create is custom-coded for your brand. No bloated themes, no sluggish plugins,
-            and no unexpected monthly hosting fees.
-          </p>
-        </motion.div>
+    <section id="services" className="py-24 sm:py-32 border-b border-[#E5E0D6] bg-[#F2EFE8] text-[#171717] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#E5E0D6]">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-3 text-xs font-mono uppercase tracking-widest text-[#66645F]">
+              <span className="text-[#C6532E] font-bold">CAPABILITIES & SCOPE</span>
+              <span>•</span>
+              <span>AGENCY SERVICES</span>
+            </div>
+            <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
+              Disciplines & Craft
+            </h2>
+            <p className="text-lg text-[#66645F] font-normal leading-relaxed">
+              Every deployment is tailor-built for your brand's commercial requirements. No off-the-shelf templates, no plugin vulnerabilities, and no recurring hosting bloat.
+            </p>
+          </div>
 
+          <div className="text-xs font-mono text-[#73765A] uppercase tracking-wider">
+            Static • Edge • High-Conversion
+          </div>
+        </div>
+
+        {/* 2x2 Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service, index) => {
+          {services.map(service => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Zap;
 
             return (
-              <motion.div
+              <div
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -5 }}
-                className="group p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-emerald-500/40 transition-colors duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 flex flex-col justify-between"
+                className="p-8 rounded-[8px] bg-white border border-[#D5CFC3] hover:border-[#171717] transition-colors flex flex-col justify-between shadow-sm group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 3 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                      className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors"
-                    >
-                      <IconComponent className="w-6 h-6" />
-                    </motion.div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-[6px] bg-[#F2EFE8] border border-[#E5E0D6] flex items-center justify-center text-[#171717] group-hover:bg-[#171717] group-hover:text-[#F2EFE8] transition-colors">
+                      <IconComponent className="w-5 h-5" />
+                    </div>
                     {service.badge && (
-                      <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-emerald-400 border border-slate-700/60">
+                      <span className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-[4px] bg-[#E5E0D6] text-[#171717]">
                         {service.badge}
                       </span>
                     )}
                   </div>
 
-                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-emerald-300 transition-colors">
+                  <h3 className="text-2xl font-serif-display font-normal text-[#171717] group-hover:text-[#C6532E] transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-xs font-semibold text-emerald-400/90 mt-1">
+                  <p className="text-xs font-mono uppercase tracking-wider text-[#73765A] mt-1 font-bold">
                     {service.tagline}
                   </p>
-                  <p className="text-sm text-slate-400 mt-3 leading-relaxed">
+                  <p className="text-sm text-[#66645F] mt-3 leading-relaxed">
                     {service.description}
                   </p>
 
-                  <div className="mt-6 pt-5 border-t border-slate-800/80 space-y-2">
-                    <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider block">
-                      Deliverables Included:
+                  <div className="mt-6 pt-5 border-t border-[#E5E0D6] space-y-2">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#66645F] font-bold block">
+                      Scope Includes:
                     </span>
                     {service.deliverables.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-300">
-                        <Check className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                      <div key={idx} className="flex items-center gap-2 text-xs text-[#171717]">
+                        <Check className="w-3.5 h-3.5 text-[#73765A] flex-shrink-0" />
                         <span>{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4">
+                <div className="mt-8 pt-4 border-t border-[#E5E0D6]">
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group/link"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#171717] hover:text-[#C6532E] transition-colors group/link"
                   >
-                    <span>Discuss this for your business</span>
+                    <span>Commission this service</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
                   </a>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

@@ -1,37 +1,32 @@
 import React from 'react';
-import { Sparkles, ArrowUpRight, MessageCircle, Instagram, Mail, Heart } from 'lucide-react';
-import { agencyConfig, vitaloProject, gstoreProject, noireProject, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
+import { ArrowUpRight, MessageCircle, Instagram, Mail } from 'lucide-react';
+import { agencyConfig, verenProject, vitaloProject, gstoreProject, noireProject, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const whatsappLink = getSiteNovaWhatsAppUrl();
 
   return (
-    <footer id="site-footer" className="bg-[#050709] border-t border-slate-900 py-16 text-slate-400">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          {/* Col 1: Brand & Tagline */}
-          <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 p-[1px]">
-                <div className="w-full h-full bg-[#0d1117] rounded-[7px] flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-emerald-400" />
-                </div>
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white font-heading">
-                Site<span className="text-emerald-400">Nova</span>
+    <footer id="site-footer" className="bg-[#171717] border-t border-[#30312F] py-20 text-[#E5E0D6]/70">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          {/* Col 1: Studio Brand & Identity */}
+          <div className="md:col-span-5 space-y-5">
+            <div className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#C6532E]" />
+              <span className="text-2xl font-serif-display font-normal tracking-tight text-[#F2EFE8]">
+                SiteNova Web Studio
               </span>
             </div>
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Bespoke web design & modern social-commerce development studio. Building ultra-fast, 100% static
-              React storefronts ready for instant Vercel edge deployment.
+            <p className="text-sm text-[#E5E0D6]/80 max-w-md leading-relaxed font-light">
+              Independent digital architecture and web design studio. We engineer bespoke, 100% static React storefronts and editorial brand flagships deployed on global edge infrastructure.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-colors"
+                className="w-9 h-9 rounded-[4px] bg-[#20211F] border border-[#383A37] flex items-center justify-center text-[#E5E0D6] hover:text-[#C6532E] hover:border-[#C6532E] transition-colors"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -40,149 +35,129 @@ export const Footer: React.FC = () => {
                 href={agencyConfig.contact.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-pink-400 hover:border-pink-500/50 transition-colors"
+                className="w-9 h-9 rounded-[4px] bg-[#20211F] border border-[#383A37] flex items-center justify-center text-[#E5E0D6] hover:text-[#C6532E] hover:border-[#C6532E] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${agencyConfig.contact.email}`}
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-colors"
+                className="w-9 h-9 rounded-[4px] bg-[#20211F] border border-[#383A37] flex items-center justify-center text-[#E5E0D6] hover:text-[#C6532E] hover:border-[#C6532E] transition-colors"
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4" />
               </a>
             </div>
-            <div className="pt-1 text-xs text-slate-400">
-              <span className="text-slate-500">WhatsApp: </span>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-emerald-400 hover:underline font-medium"
-              >
-                {agencyConfig.contact.whatsappDisplay}
-              </a>
-            </div>
           </div>
 
-          {/* Col 2: Featured Client Showcases */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4 font-heading">
-              Client Projects
+          {/* Col 2: Client Showcases */}
+          <div className="md:col-span-4 space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-[#E5E0D6] font-bold">
+              Selected Projects
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-3 text-xs font-mono">
               <li>
-                <a
-                  href="#vital0"
-                  className="hover:text-white transition-colors flex items-center justify-between"
-                >
-                  <span className="text-emerald-400 font-medium">VITALØ</span>
-                  <span className="text-[10px] text-emerald-400 font-mono">Featured</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={vitaloProject.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1 transition-colors"
-                >
-                  <span>vital0.vercel.app</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-              </li>
-              <li className="pt-2">
-                <a
-                  href="#gstore"
-                  className="hover:text-white transition-colors flex items-center justify-between"
-                >
-                  <span>GStore Sportswear</span>
-                  <span className="text-[10px] text-blue-400 font-mono">Sportswear</span>
-                </a>
+                <div className="flex items-center justify-between">
+                  <a href="#veren" className="text-[#F2EFE8] hover:text-[#C6532E] transition-colors font-bold">
+                    01. VÉREN
+                  </a>
+                  <a
+                    href={verenProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#66645F] hover:text-[#E5E0D6] flex items-center gap-0.5"
+                  >
+                    <span>veren-amber.vercel.app</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                </div>
               </li>
               <li>
-                <a
-                  href={gstoreProject.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-slate-400 hover:text-blue-400 flex items-center gap-1 transition-colors"
-                >
-                  <span>gstore-static.vercel.app</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-              </li>
-              <li className="pt-2">
-                <a
-                  href="#noire"
-                  className="hover:text-white transition-colors flex items-center justify-between"
-                >
-                  <span>NOIRÉ Parfums</span>
-                  <span className="text-[10px] text-amber-400 font-mono">Luxury Fragrance</span>
-                </a>
+                <div className="flex items-center justify-between">
+                  <a href="#vital0" className="text-[#F2EFE8] hover:text-[#C6532E] transition-colors font-bold">
+                    02. VITALØ
+                  </a>
+                  <a
+                    href={vitaloProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#66645F] hover:text-[#E5E0D6] flex items-center gap-0.5"
+                  >
+                    <span>vital0.vercel.app</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                </div>
               </li>
               <li>
-                <a
-                  href={noireProject.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-slate-400 hover:text-amber-400 flex items-center gap-1 transition-colors"
-                >
-                  <span>noire-store-five.vercel.app</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
+                <div className="flex items-center justify-between">
+                  <a href="#gstore" className="text-[#F2EFE8] hover:text-[#C6532E] transition-colors font-bold">
+                    03. GStore Sportswear
+                  </a>
+                  <a
+                    href={gstoreProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#66645F] hover:text-[#E5E0D6] flex items-center gap-0.5"
+                  >
+                    <span>gstore-static.vercel.app</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                </div>
               </li>
-              <li className="pt-2">
-                <a
-                  href="#whatsapp-ordering"
-                  className="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1 font-medium"
-                >
-                  <span>WhatsApp Ordering Guide</span>
-                </a>
+              <li>
+                <div className="flex items-center justify-between">
+                  <a href="#noire" className="text-[#F2EFE8] hover:text-[#C6532E] transition-colors font-bold">
+                    04. NOIRÉ Parfums
+                  </a>
+                  <a
+                    href={noireProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#66645F] hover:text-[#E5E0D6] flex items-center gap-0.5"
+                  >
+                    <span>noire-store-five.vercel.app</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Agency Navigation & Deployment */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4 font-heading">
-              Architecture & Vercel
+          {/* Col 3: Principles & Specs */}
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-[#E5E0D6] font-bold">
+              Infrastructure Spec
             </h4>
-            <ul className="space-y-2 text-xs">
-              <li className="flex items-center gap-2 text-slate-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>100% Static React (Vite)</span>
+            <ul className="space-y-2 text-xs font-mono text-[#E5E0D6]/70">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#73765A]" />
+                <span>100% Static React Architecture</span>
               </li>
-              <li className="flex items-center gap-2 text-slate-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>Vercel Edge Distribution</span>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#73765A]" />
+                <span>Vercel Global Edge CDN</span>
               </li>
-              <li className="flex items-center gap-2 text-slate-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>Zero Database Overhead</span>
-              </li>
-              <li className="flex items-center gap-2 text-slate-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#73765A]" />
                 <span>Zero Server Maintenance</span>
               </li>
-              <li className="pt-3">
-                <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-[11px] text-slate-400">
-                  Built to deploy cleanly with <code className="text-emerald-300 font-mono">npm run build</code> into <code className="text-emerald-300 font-mono">dist/</code>.
-                </div>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#73765A]" />
+                <span>Zero Security Vulnerabilities</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p>© {currentYear} SiteNova Web Design Studio. All rights reserved.</p>
+        <div className="pt-8 border-t border-[#30312F] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#66645F]">
+          <p>© {currentYear} SiteNova Web Studio. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#hero" className="hover:text-white transition-colors">
+            <a href="#hero" className="hover:text-[#F2EFE8] transition-colors">
               Back to Top ↑
             </a>
-            <a href="#contact" className="hover:text-white transition-colors">
-              Hire SiteNova
+            <a href="#contact" className="hover:text-[#C6532E] transition-colors">
+              Commission Project
             </a>
           </div>
         </div>

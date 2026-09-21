@@ -4,21 +4,17 @@ import {
   Instagram,
   Mail,
   ArrowUpRight,
-  Sparkles,
   Clock,
-  ShieldCheck,
-  CheckCircle2,
   Copy,
   Check
 } from 'lucide-react';
-import { motion } from 'motion/react';
 import { agencyConfig, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
 
 export const ContactCTA: React.FC = () => {
   const [selectedProjectType, setSelectedProjectType] = useState('E-Commerce Website');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const customMessage = `Hello SiteNova! I'm interested in getting a website (${selectedProjectType}) for my business. I'd like to learn more about your services.`;
+  const customMessage = `Hello SiteNova! I'm interested in commissioning a website (${selectedProjectType}) for my business. I'd like to learn more about your services.`;
 
   const dynamicWhatsAppLink = getSiteNovaWhatsAppUrl(customMessage);
 
@@ -29,63 +25,56 @@ export const ContactCTA: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 border-t border-slate-800/80 relative overflow-hidden bg-[#07090C]">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[150px] pointer-events-none -z-10 rounded-full animate-pulse-glow" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 sm:py-32 border-b border-[#30312F] relative overflow-hidden bg-[#20211F] text-[#F2EFE8]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          {/* Main Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 hover:border-slate-700 p-8 sm:p-12 shadow-2xl relative overflow-hidden transition-colors"
-          >
-            {/* Top Badge */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Start Your Next Project</span>
+          {/* Main Container */}
+          <div className="rounded-[12px] bg-[#171717] border border-[#383A37] p-8 sm:p-14 shadow-2xl relative">
+            {/* Top Label */}
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#30312F]">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-[4px] bg-[#C6532E] text-[#F2EFE8] font-mono text-[10px] font-bold uppercase tracking-widest">
+                  COMMISSIONS OPEN
+                </span>
+                <span className="text-xs font-mono text-[#E5E0D6]/60 uppercase tracking-wider">
+                  Direct Agency Contact
+                </span>
               </div>
 
-              <div className="flex items-center gap-2 text-xs text-slate-400">
-                <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Typical Turnaround: {agencyConfig.contact.turnaroundTime}</span>
+              <div className="flex items-center gap-2 text-xs font-mono text-[#E5E0D6]/70">
+                <Clock className="w-3.5 h-3.5 text-[#C6532E]" />
+                <span>Turnaround: {agencyConfig.contact.turnaroundTime}</span>
               </div>
             </div>
 
             {/* Headline */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-heading tracking-tight">
-              Ready to build a website that{' '}
-              <span className="text-emerald-400">actually generates revenue?</span>
+            <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#F2EFE8] tracking-tight leading-[1.05]">
+              Initiate Your Digital <span className="text-[#C6532E]">Transformation</span>
             </h2>
 
-            <p className="text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl">
-              Skip complex forms. Contact SiteNova directly via WhatsApp or Instagram.
-              We'll review your business concept and respond with a personalized proposal within 24 hours.
+            <p className="text-[#E5E0D6] text-base sm:text-lg mt-4 leading-relaxed font-light max-w-2xl">
+              No endless intake forms. Connect directly with SiteNova's creative directors on WhatsApp or Instagram to discuss timelines, technical scope, and exact estimates.
             </p>
 
-            {/* Project Type Selector to customize WhatsApp message */}
-            <div className="mt-8 pt-6 border-t border-slate-800/80">
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-3">
-                What type of website does your business need?
+            {/* Project Type Selector */}
+            <div className="mt-10 pt-8 border-t border-[#30312F]">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#66645F] block mb-3">
+                Select Primary Engagement Focus:
               </span>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2 mb-8">
                 {[
-                  'Sportswear & Apparel E-Commerce',
-                  'Luxury Store with WhatsApp Ordering',
-                  'Brand Portfolio & Corporate Site',
-                  'Custom Social-Commerce Store',
-                ].map((type) => (
+                  'Creative Studio / Agency Site',
+                  'E-Commerce Storefront',
+                  'Luxury WhatsApp Direct Store',
+                  'High-Performance Static Web App',
+                ].map(type => (
                   <button
                     key={type}
                     onClick={() => setSelectedProjectType(type)}
-                    className={`px-3.5 py-2 rounded-xl text-xs font-medium border transition-all active:scale-95 ${
+                    className={`px-4 py-2 rounded-[6px] text-xs font-bold uppercase tracking-wider transition-all ${
                       selectedProjectType === type
-                        ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300 shadow-sm'
-                        : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200'
+                        ? 'bg-[#C6532E] text-[#F2EFE8] border border-[#C6532E]'
+                        : 'bg-[#20211F] text-[#E5E0D6] border border-[#383A37] hover:border-[#E5E0D6]'
                     }`}
                   >
                     {type}
@@ -95,81 +84,78 @@ export const ContactCTA: React.FC = () => {
             </div>
 
             {/* Direct Contact Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* WhatsApp Button */}
-              <motion.a
+              <a
                 id="contact-btn-whatsapp"
                 href={dynamicWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="group p-5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-colors shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/35 flex items-center justify-between"
+                className="group p-5 rounded-[8px] bg-[#C6532E] hover:bg-[#b04523] text-[#F2EFE8] font-bold transition-all shadow-md flex items-center justify-between"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-slate-950/10 flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 fill-slate-950" />
+                  <div className="w-10 h-10 rounded-[6px] bg-black/20 flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5 text-[#F2EFE8]" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-slate-900/80 font-bold">
-                      Recommended • Instant Reply
+                    <div className="text-[10px] uppercase tracking-widest text-[#F2EFE8]/80 font-mono">
+                      Fastest Response
                     </div>
-                    <div className="text-lg font-extrabold tracking-tight">
-                      Chat on WhatsApp
+                    <div className="text-base font-bold tracking-tight">
+                      Message on WhatsApp
                     </div>
-                    <div className="text-xs text-slate-950/80 font-mono font-medium">
+                    <div className="text-xs text-[#F2EFE8]/80 font-mono">
                       {agencyConfig.contact.whatsappDisplay}
                     </div>
                   </div>
                 </div>
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </motion.a>
+              </a>
 
               {/* Instagram Button */}
-              <motion.a
+              <a
                 id="contact-btn-instagram"
                 href={agencyConfig.contact.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="group p-5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-pink-500/50 text-white font-bold transition-colors shadow-lg hover:shadow-pink-500/10 flex items-center justify-between"
+                className="group p-5 rounded-[8px] bg-[#20211F] hover:bg-[#282926] border border-[#383A37] text-[#F2EFE8] font-bold transition-all flex items-center justify-between"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center">
-                    <Instagram className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-[6px] bg-white/5 text-[#E5E0D6] flex items-center justify-center">
+                    <Instagram className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-slate-400 font-medium">
-                      Direct Message
+                    <div className="text-[10px] uppercase tracking-widest text-[#66645F] font-mono">
+                      Social Channel
                     </div>
-                    <div className="text-lg font-extrabold tracking-tight">
+                    <div className="text-base font-bold tracking-tight">
                       {agencyConfig.contact.instagramHandle}
+                    </div>
+                    <div className="text-xs text-[#E5E0D6]/60 font-mono">
+                      Follow & Direct Message
                     </div>
                   </div>
                 </div>
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-slate-400 group-hover:text-pink-400" />
-              </motion.a>
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#66645F] group-hover:text-[#F2EFE8]" />
+              </a>
             </div>
 
-            {/* Email Contact alternative */}
-            <div className="mt-6 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5 text-xs text-slate-300">
-                <Mail className="w-4 h-4 text-emerald-400" />
-                <span>Prefer email? Send your project brief to:</span>
-                <span className="font-mono text-emerald-300 font-semibold">{agencyConfig.contact.email}</span>
+            {/* Email Alternative */}
+            <div className="mt-6 p-4 rounded-[6px] bg-[#20211F] border border-[#30312F] flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2.5 text-xs text-[#E5E0D6]/80 font-mono">
+                <Mail className="w-4 h-4 text-[#73765A]" />
+                <span>Brief submission:</span>
+                <span className="text-[#F2EFE8] font-bold">{agencyConfig.contact.email}</span>
               </div>
-              <motion.button
+              <button
                 onClick={copyEmail}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
+                className="px-3 py-1.5 rounded-[4px] bg-[#171717] hover:bg-[#282926] text-xs font-mono text-[#E5E0D6] border border-[#383A37] transition-colors flex items-center gap-1.5"
               >
                 {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedEmail ? 'Copied' : 'Copy Email'}</span>
-              </motion.button>
+              </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

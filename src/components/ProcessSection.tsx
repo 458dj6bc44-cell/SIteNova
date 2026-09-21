@@ -1,7 +1,6 @@
 import React from 'react';
 import { MessageSquare, Layout, CheckCircle, Rocket, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
-import { processSteps, agencyConfig, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
+import { processSteps, getSiteNovaWhatsAppUrl } from '../data/portfolioData';
 
 const stepIcons = [MessageSquare, Layout, CheckCircle, Rocket];
 
@@ -9,99 +8,86 @@ export const ProcessSection: React.FC = () => {
   const whatsappLink = getSiteNovaWhatsAppUrl();
 
   return (
-    <section id="process" className="py-24 border-t border-slate-800/80 bg-slate-950/40 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-            How It Works
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight mt-2">
-            Simple 4-Step <span className="text-emerald-400">Process</span>
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg mt-3">
-            From first message to live launch in just 7 to 14 days. Transparent, fast, and stress-free.
-          </p>
-        </motion.div>
+    <section id="process" className="py-24 sm:py-32 border-b border-[#E5E0D6] bg-[#F2EFE8] text-[#171717] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#E5E0D6]">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-3 text-xs font-mono uppercase tracking-widest text-[#66645F]">
+              <span className="text-[#C6532E] font-bold">METHODOLOGY</span>
+              <span>•</span>
+              <span>4-STAGE SPRINT</span>
+            </div>
+            <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
+              From Concept to Edge in 14 Days
+            </h2>
+            <p className="text-lg text-[#66645F] font-normal leading-relaxed">
+              We eliminate bureaucratic agency bloat. Every project moves through four rigorous, transparent phases from creative discovery to global Vercel deployment.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          <div className="text-xs font-mono text-[#73765A] uppercase tracking-wider">
+            7 to 14 Business Days
+          </div>
+        </div>
+
+        {/* 4 Steps Horizontal Flow */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {processSteps.map((step, idx) => {
             const Icon = stepIcons[idx] || Rocket;
 
             return (
-              <motion.div
+              <div
                 key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -5 }}
-                className="relative p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between group hover:bg-slate-900/90 shadow-lg"
+                className="p-6 rounded-[8px] bg-white border border-[#D5CFC3] hover:border-[#171717] transition-colors flex flex-col justify-between group shadow-sm"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-black text-slate-700 group-hover:text-emerald-400/80 font-mono transition-colors">
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="font-serif-display text-3xl font-bold text-[#C6532E]">
                       {step.number}
                     </span>
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 6 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                      className="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center text-emerald-400"
-                    >
-                      <Icon className="w-5 h-5" />
-                    </motion.div>
+                    <div className="w-10 h-10 rounded-[6px] bg-[#F2EFE8] border border-[#E5E0D6] flex items-center justify-center text-[#171717] group-hover:bg-[#171717] group-hover:text-[#F2EFE8] transition-colors">
+                      <Icon className="w-4 h-4" />
+                    </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white font-heading mb-2">
+                  <h3 className="text-xl font-serif-display font-normal text-[#171717] mb-2 group-hover:text-[#C6532E] transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                  <p className="text-xs text-[#66645F] leading-relaxed mb-4">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-500 font-medium">{step.duration}</span>
-                  <span className="text-emerald-400 font-semibold">{step.deliverable}</span>
+                <div className="pt-4 border-t border-[#E5E0D6] flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-[#66645F]">{step.duration}</span>
+                  <span className="text-[#73765A] font-bold">{step.deliverable}</span>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
-        {/* Quick CTA strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-14 p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto shadow-xl transition-colors"
-        >
+        {/* Action Strip */}
+        <div className="mt-14 p-6 sm:p-8 rounded-[8px] bg-[#E5E0D6]/60 border border-[#D5CFC3] flex flex-col sm:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
           <div>
-            <h4 className="text-base font-bold text-white font-heading">
-              Ready to start step 1 for your business?
+            <h4 className="text-xl font-serif-display font-normal text-[#171717]">
+              Ready to commence Stage 01?
             </h4>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Tell us what you sell or showcase, and we'll reply with ideas and an estimate within 24 hours.
+            <p className="text-xs text-[#66645F] mt-1">
+              Share your brand scope or catalog requirements. We reply with a detailed technical roadmap and proposal within 24 hours.
             </p>
           </div>
-          <motion.a
+          <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.04, y: -1 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs tracking-wide transition-colors shadow-md flex items-center gap-2 flex-shrink-0 group"
+            className="px-6 py-3.5 rounded-[8px] bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm flex items-center gap-2 flex-shrink-0 group"
           >
-            <span>Start With a Chat</span>
+            <span>Start WhatsApp Consultation</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
       </div>
     </section>
   );

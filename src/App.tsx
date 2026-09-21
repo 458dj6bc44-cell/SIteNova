@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { ProjectVeren } from './components/ProjectVeren';
 import { ProjectVitalo } from './components/ProjectVitalo';
 import { ProjectGStore } from './components/ProjectGStore';
 import { ProjectNoire } from './components/ProjectNoire';
@@ -10,73 +11,81 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { ProcessSection } from './components/ProcessSection';
 import { ContactCTA } from './components/ContactCTA';
 import { Footer } from './components/Footer';
-import { Sparkles, Layers, ArrowDown } from 'lucide-react';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#090B0E] text-slate-100 font-sans selection:bg-emerald-500/20 selection:text-emerald-300">
+    <div className="min-h-screen bg-[#F2EFE8] text-[#171717] font-sans selection:bg-[#C6532E]/20 selection:text-[#C6532E]">
       {/* Sticky Navigation */}
       <Navbar />
 
       <main>
-        {/* Hero Section */}
+        {/* Editorial Hero Section */}
         <Hero />
 
-        {/* Projects Section Header Anchor */}
-        <section id="projects" className="py-12 bg-slate-950/80 border-t border-slate-800/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        {/* Selected Work Index Anchor Header */}
+        <section id="work" className="py-16 bg-[#E5E0D6]/40 border-b border-[#E5E0D6]">
+          <div id="projects" className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-                  Client Case Studies
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading tracking-tight mt-1">
-                  Selected Work by <span className="text-emerald-400">SiteNova</span>
+                <div className="flex items-center gap-3 mb-2 text-xs font-mono uppercase tracking-widest text-[#66645F]">
+                  <span className="text-[#C6532E] font-bold">PORTFOLIO INDEX</span>
+                  <span>•</span>
+                  <span>PRODUCTION CASE STUDIES</span>
+                </div>
+                <h2 className="text-3xl sm:text-5xl font-serif-display font-normal text-[#171717] tracking-tight">
+                  Selected Agency Deployments
                 </h2>
-                <p className="text-sm text-slate-400 mt-1 max-w-xl">
-                  Explore full production websites built with modern 100% static React architecture, responsive design,
-                  and direct customer conversion workflows.
+                <p className="text-sm text-[#66645F] mt-2 max-w-xl font-normal leading-relaxed">
+                  Real, live production web architectures built on 100% static React and distributed across global edge CDNs.
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  href="#veren"
+                  className="px-3.5 py-1.5 rounded-[4px] bg-[#171717] text-[#F2EFE8] border border-[#171717] text-xs font-mono font-bold hover:bg-[#C6532E] hover:border-[#C6532E] transition-colors"
+                >
+                  01. VÉREN (Flagship) ↓
+                </a>
                 <a
                   href="#vital0"
-                  className="px-3.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/40 text-xs font-semibold transition-colors flex items-center gap-1.5"
+                  className="px-3.5 py-1.5 rounded-[4px] bg-white text-[#171717] border border-[#D5CFC3] text-xs font-mono font-bold hover:border-[#171717] transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span>01. VITALØ (Featured) ↓</span>
+                  02. VITALØ ↓
                 </a>
                 <a
                   href="#gstore"
-                  className="px-3.5 py-1.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-medium transition-colors"
+                  className="px-3.5 py-1.5 rounded-[4px] bg-white text-[#171717] border border-[#D5CFC3] text-xs font-mono font-bold hover:border-[#171717] transition-colors"
                 >
-                  02. GStore Sportswear ↓
+                  03. GStore ↓
                 </a>
                 <a
                   href="#noire"
-                  className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-medium transition-colors"
+                  className="px-3.5 py-1.5 rounded-[4px] bg-white text-[#171717] border border-[#D5CFC3] text-xs font-mono font-bold hover:border-[#171717] transition-colors"
                 >
-                  03. NOIRÉ Parfums ↓
+                  04. NOIRÉ ↓
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Project 1 (Featured): VITALØ Precision Supplements Showcase */}
+        {/* Project 01 (Flagship): VÉREN Studio Showcase */}
+        <ProjectVeren />
+
+        {/* Project 02: VITALØ Precision Supplements Showcase */}
         <ProjectVitalo />
 
-        {/* Project 2: GStore Sportswear Showcase */}
+        {/* Project 03: GStore Sportswear Showcase */}
         <ProjectGStore />
 
-        {/* Project 3: NOIRÉ Luxury Perfume Showcase */}
+        {/* Project 04: NOIRÉ Parfums Luxury Showcase */}
         <ProjectNoire />
 
-        {/* Dedicated NOIRÉ WhatsApp Ordering System Innovation Breakdown & Simulator */}
+        {/* NOIRÉ WhatsApp Ordering System Innovation Breakdown & Simulator */}
         <NoireWhatsAppSystem />
 
-        {/* Services Section */}
+        {/* Services & Capabilities Section */}
         <Services />
 
         {/* Why Choose SiteNova Section */}
@@ -85,11 +94,11 @@ export default function App() {
         {/* 4-Step Process Section */}
         <ProcessSection />
 
-        {/* Contact & Inquiry CTA Section */}
+        {/* Contact & Commission CTA Section */}
         <ContactCTA />
       </main>
 
-      {/* Professional Footer */}
+      {/* Editorial Footer */}
       <Footer />
     </div>
   );

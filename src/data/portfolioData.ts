@@ -2,12 +2,12 @@ import { Project, ServiceItem, ProcessStep, ValueProp, WhatsAppStep } from '../t
 
 export const agencyConfig = {
   name: 'SiteNova',
-  tagline: 'High-Impact Web Design & Social-Commerce Engineering',
-  headline: 'We engineer websites that turn visitors into paying customers.',
+  studioName: 'SiteNova Web Studio',
+  tagline: 'Bespoke Web Design & Modern Social-Commerce Studio',
+  headline: 'WE BUILD DIGITAL EXPERIENCES.',
   subheadline:
-    'SiteNova designs and builds ultra-fast, modern static websites and frictionless social-commerce storefronts for ambitious brands.',
+    'SiteNova is a professional web design and custom development studio. We engineer high-converting websites, custom e-commerce experiences, social-commerce systems, and high-performance digital experiences.',
   contact: {
-    // SiteNova WhatsApp Business Contact
     whatsappNumber: '01555380043',
     whatsappIntNumber: '201555380043',
     whatsappDisplay: '01555380043',
@@ -17,37 +17,73 @@ export const agencyConfig = {
     instagramUrl: 'https://instagram.com/sitenovastudio',
     email: 'hello@sitenova.design',
     location: 'Egypt & Worldwide',
-    status: 'Accepting New Projects for Q2 / Q3',
+    status: 'Accepting Selected Client Projects',
     turnaroundTime: '7 to 14 Days Typical Delivery',
   },
   stats: [
-    { value: '100%', label: 'Static & Edge Hosted' },
-    { value: '< 1s', label: 'Page Load Speed' },
-    { value: '0 EGP', label: 'Monthly Database Fees' },
-    { value: '7-14d', label: 'Average Delivery' },
+    { value: '100% Static', label: 'Vercel & Edge Optimized' },
+    { value: '0% Gateway Fees', label: 'WhatsApp Direct Orders' },
+    { value: '< 1.0s Speed', label: 'Zero Database Latency' },
+    { value: '7–14 Days', label: 'Fast Turnaround' },
   ],
 };
 
 /**
- * Returns a direct WhatsApp Web URL for SiteNova with pre-filled message.
- * Formatted as: https://web.whatsapp.com/send?phone=201555380043&text=...
- * Opens in the browser directly without requiring desktop app installation.
+ * Returns a universal WhatsApp URL.
+ * Automatically adapts: opens WhatsApp Web on desktop or native WhatsApp on mobile via wa.me / web.whatsapp.com.
  */
 export const getSiteNovaWhatsAppUrl = (message?: string): string => {
+  const text = message || agencyConfig.contact.whatsappDefaultMessage;
+  return `https://wa.me/${agencyConfig.contact.whatsappIntNumber}?text=${encodeURIComponent(text)}`;
+};
+
+export const getSiteNovaWhatsAppWebUrl = (message?: string): string => {
   const text = message || agencyConfig.contact.whatsappDefaultMessage;
   return `https://web.whatsapp.com/send?phone=${agencyConfig.contact.whatsappIntNumber}&text=${encodeURIComponent(text)}`;
 };
 
+/* ==========================================================================
+   FLAGSHIP PROJECT #1: VÉREN
+   ========================================================================== */
+export const verenProject: Project = {
+  id: 'veren',
+  name: 'VÉREN',
+  subtitle: 'Haute Editorial Digital Showcase & Spatial Experience',
+  category: 'Luxury Digital Experience',
+  liveUrl: 'https://veren-amber.vercel.app/',
+  description:
+    'An evocative, high-fashion luxury digital experience crafted with bespoke editorial layouts, sculptural typography, fluid transitions, and uncompromising art direction. Demonstrating SiteNova’s highest tier of digital craftsmanship.',
+  accentColor: '#C6532E', // Burnt Orange
+  badge: 'Flagship Project • Luxury Experience',
+  features: [
+    'Art-directed editorial spatial layouts and bespoke typographical rhythm',
+    'Curated luxury product storytelling with tactile interactions',
+    'Fluid scroll-orchestrated scenes and masked typographical reveals',
+    'Custom micro-interactions engineered for maximum brand prestige',
+    '100% frontend static edge architecture with sub-second asset delivery',
+    'Fully responsive design optimized for high-resolution retina screens and mobile',
+  ],
+  techStack: ['React', 'Vite', 'Tailwind CSS', 'Motion', 'Vercel Edge', 'Editorial UX'],
+  stats: [
+    { label: 'Art Direction', value: 'Bespoke Luxury' },
+    { label: 'Architecture', value: '100% Static' },
+    { label: 'Performance', value: 'Instant Edge' },
+  ],
+};
+
+/* ==========================================================================
+   PROJECT #2: VITALØ
+   ========================================================================== */
 export const vitaloProject: Project = {
   id: 'vital0',
   name: 'VITALØ',
-  subtitle: 'Precision Performance Supplements & Direct WhatsApp E-Commerce',
-  category: 'E-Commerce / Supplement Store',
+  subtitle: 'Precision Performance Supplements',
+  category: 'Precision Performance',
   liveUrl: 'https://vital0.vercel.app/',
   description:
-    'A premium, high-performance supplement e-commerce experience built with a strong focus on mobile UX, product presentation, performance, and direct WhatsApp ordering.',
-  accentColor: '#10b981', // Emerald / Neon Accent
-  badge: 'Featured Project • Precision Supplements',
+    'Premium supplement e-commerce website with WhatsApp ordering, advanced product interactions, and a mobile-first shopping experience.',
+  accentColor: '#73765A', // Dusty Olive
+  badge: 'Selected Work • Precision Supplements',
   features: [
     'Mobile-first design with fluid thumb-navigation and rapid loading',
     'Interactive product catalog with category filtering and instant search',
@@ -68,18 +104,21 @@ export const vitaloProject: Project = {
   ],
 };
 
+/* ==========================================================================
+   PROJECT #3: GSTORE SPORTSWEAR
+   ========================================================================== */
 export const gstoreProject: Project = {
   id: 'gstore',
   name: 'GStore Sportswear',
-  subtitle: 'High-Energy Athletic & Performance E-Commerce Store',
-  category: 'E-Commerce & Sportswear',
+  subtitle: 'Athletic E-Commerce',
+  category: 'Athletic E-Commerce',
   liveUrl: 'https://gstore-static.vercel.app/',
   description:
-    'GStore is a high-performance sportswear e-commerce platform designed for modern athletic brands. Built with a sleek, aerodynamic UI, responsive filtering, live shopping cart, and dynamic size/color variant pickers.',
-  accentColor: '#3b82f6', // Electric Blue
-  badge: 'Athletic E-Commerce',
+    'Modern responsive sportswear e-commerce featuring dynamic catalogs, variant pickers, instant search, and shopping cart.',
+  accentColor: '#171717', // Deep Ink
+  badge: 'Selected Work • Sportswear E-Commerce',
   features: [
-    'Modern responsive design across desktop, tablet, and mobile',
+    'Responsive design across desktop, tablet, and mobile devices',
     'Curated product catalog with smooth layout shifts',
     'Product categories (Men, Women, Footwear, Accessories)',
     'Instant search and multi-attribute filtering',
@@ -87,176 +126,176 @@ export const gstoreProject: Project = {
     'Interactive size and color variant selectors',
     'Dynamic shopping cart with real-time subtotal calculation',
     'Optimized mobile-friendly experience with thumb-friendly controls',
-    'Professional, clean e-commerce UI built for conversions',
+    'Conversion-focused UI engineered for athletic brands',
     'Clean product presentation with clear call-to-actions',
   ],
-  techStack: ['React 19', 'Vite', 'Tailwind CSS', 'Static Architecture', 'Vercel Deployment'],
+  techStack: ['React', 'Vite', 'Tailwind CSS', 'Static Architecture', 'Vercel Deployment'],
   stats: [
-    { label: 'Lighthouse Performance', value: '98/100' },
-    { label: 'Responsive Viewports', value: '100% Fluid' },
-    { label: 'Catalog Filtering', value: 'Instant (<10ms)' },
+    { label: 'Lighthouse Score', value: '98/100' },
+    { label: 'Responsive Range', value: '100% Fluid' },
+    { label: 'Search Latency', value: '< 10ms' },
   ],
 };
 
+/* ==========================================================================
+   PROJECT #4: NOIRÉ PARFUMS
+   ========================================================================== */
 export const noireProject: Project = {
   id: 'noire',
   name: 'NOIRÉ Parfums',
-  subtitle: 'Luxury Fragrance Boutique with WhatsApp Social-Commerce',
-  category: 'Luxury E-Commerce & Social Commerce',
+  subtitle: 'Haute Parfumerie & Social-Commerce',
+  category: 'Haute Parfumerie',
   liveUrl: 'https://noire-store-five.vercel.app/',
   description:
-    'NOIRÉ is an exclusive luxury fragrance boutique combining high-fashion editorial design with an innovative direct-to-WhatsApp social-commerce ordering system that eliminates payment friction.',
-  accentColor: '#d97706', // Warm Amber / Luxury Gold
-  badge: 'Luxury Social-Commerce',
+    'A bespoke luxury perfume house combining dark high-fashion editorial aesthetics with a frictionless direct-to-WhatsApp checkout system.',
+  accentColor: '#C6532E', // Burnt Orange
+  badge: 'Selected Work • Haute Parfumerie',
   features: [
-    'Luxury visual design with dark obsidian palette and gold accents',
-    'Comprehensive fragrance product catalog',
+    'Luxury visual design with obsidian dark palette and gold accents',
+    'Comprehensive fragrance catalog featuring Oud, Santal, Rose, and Ambre',
     'Immersive product detail pages with olfactory notes breakdown',
-    'Curated seasonal collections (Oud, Santal, Amber)',
-    'Real-time shopping cart with quantity management',
+    'Real-time shopping cart with quantity and volume management',
     'Mobile-first responsive architecture tailored for high-end shoppers',
-    'Customer delivery details capture form',
-    'Frictionless WhatsApp ordering system (Zero payment gateway overhead)',
+    'Customer delivery details capture form (Name, Phone, City, Address)',
+    'Frictionless WhatsApp ordering system eliminating gateway overhead',
+    'Zero backend database overhead, hosted on global edge CDN',
   ],
   techStack: ['React', 'Vite', 'Tailwind CSS', 'WhatsApp Business API URI', 'Vercel Static'],
   stats: [
-    { label: 'Checkout Friction', value: 'Zero Drop-off' },
-    { label: 'Gateway Transaction Fees', value: '0%' },
-    { label: 'Direct Customer Connection', value: '100% WhatsApp' },
+    { label: 'Checkout Drop-off', value: 'Near Zero' },
+    { label: 'Gateway Fees', value: '0%' },
+    { label: 'Order Dispatch', value: 'Instant WhatsApp' },
   ],
 };
 
+export const allProjects: Project[] = [
+  verenProject,
+  vitaloProject,
+  gstoreProject,
+  noireProject,
+];
+
+/* ==========================================================================
+   WHATSAPP ORDERING STEPS
+   ========================================================================== */
 export const noireWhatsAppSteps: WhatsAppStep[] = [
   {
     stepNumber: 1,
-    title: 'Browse Luxury Fragrances',
-    description: 'The customer explores curated perfume collections, notes (Top, Heart, Base), and sizes.',
+    title: 'Browse',
+    description: 'The customer explores products, variants, collections, and specifications directly on the site.',
     iconName: 'Sparkles',
   },
   {
     stepNumber: 2,
     title: 'Add to Cart',
-    description: 'Customers choose their bottle volumes (e.g. 50ml, 100ml) and add selections with one tap.',
+    description: 'Shoppers select variants (sizes, flavors, fragrances) and add items with one tactile tap.',
     iconName: 'ShoppingBag',
   },
   {
     stepNumber: 3,
-    title: 'Review Cart',
-    description: 'Transparent order breakdown showing quantities, unit costs, and total calculation.',
+    title: 'Review Order',
+    description: 'Transparent order breakdown showing quantities, unit pricing, and subtotal calculation.',
     iconName: 'CheckCircle2',
   },
   {
     stepNumber: 4,
-    title: 'Enter Delivery Information',
-    description: 'The shopper enters Full Name, Phone Number, City, and Delivery Address directly in the cart.',
-    highlight: 'Full Name • Phone • City • Street Address',
+    title: 'Enter Delivery Details',
+    description: 'The shopper inputs Full Name, Phone Number, City, Delivery Address, and optional notes.',
+    highlight: 'Full Name • Phone • City • Delivery Address • Notes',
     iconName: 'MapPin',
   },
   {
     stepNumber: 5,
-    title: 'Click WhatsApp Order Button',
-    description: 'One prominent action button initiates the instant checkout without asking for credit card details.',
+    title: 'Generate WhatsApp Order',
+    description: 'A single tap formats the entire order with structured text, itemized totals, and delivery info.',
+    highlight: 'Mobile opens native WhatsApp • Desktop opens WhatsApp Web',
     iconName: 'Send',
   },
   {
     stepNumber: 6,
-    title: 'Automated Message Generation',
-    description:
-      'The website automatically generates a structured, formatted text with ordered items, total, and recipient address.',
-    highlight: 'Formatted with items, quantities, totals & delivery info',
-    iconName: 'FileText',
-  },
-  {
-    stepNumber: 7,
-    title: 'Mobile: Direct WhatsApp App Launch',
-    description: 'On iOS or Android, the device seamlessly launches the native WhatsApp app with text pre-filled.',
-    iconName: 'Smartphone',
-  },
-  {
-    stepNumber: 8,
-    title: 'Desktop: WhatsApp Web Integration',
-    description: 'On laptops or desktops, it opens web.whatsapp.com ready for instant 1-click dispatch.',
-    iconName: 'Laptop',
-  },
-  {
-    stepNumber: 9,
-    title: 'Direct Order Dispatch to Business',
-    description:
-      'The business owner receives the complete order directly in WhatsApp, establishing an instant human relationship.',
+    title: 'Business Receives Order',
+    description: 'The business owner receives the structured order in WhatsApp, starting a direct customer relationship.',
     highlight: 'Direct chat • Zero gateway commissions • Instant confirmation',
     iconName: 'MessageSquareCheck',
   },
 ];
 
+/* ==========================================================================
+   SERVICES (EDITORIAL SERVICE LIST)
+   ========================================================================== */
 export const services: ServiceItem[] = [
   {
     id: 'ecommerce',
-    title: 'Custom E-Commerce Websites',
+    title: 'CUSTOM E-COMMERCE',
     tagline: 'High-converting online stores built for performance',
     description:
-      'We build sleek, responsive online storefronts with rich product catalogs, dynamic filtering, size/color variant pickers, and fluid shopping carts.',
+      'High-converting online stores built for performance. We engineer responsive digital storefronts with dynamic catalogs, variant pickers, instant search, and frictionless cart experiences.',
     deliverables: [
-      'Product catalog & category architecture',
-      'Live search and attribute filtering',
-      'Variants selector (sizes, colors, materials)',
-      'Smooth sliding shopping cart drawer',
-      'Mobile-optimized touch interactions',
+      'Product catalog & structured category architecture',
+      'Instant search and multi-attribute filtering',
+      'Multi-variant selectors (sizes, colors, materials)',
+      'Smooth sliding shopping cart drawer with local persistence',
+      'Mobile-first touch interactions and conversion UI',
     ],
     icon: 'Store',
-    badge: 'Popular for Retail',
+    badge: 'Core Specialty',
   },
   {
     id: 'social-commerce',
-    title: 'WhatsApp & Social-Commerce',
-    tagline: 'Zero-gateway ordering directly into your WhatsApp inbox',
+    title: 'WHATSAPP COMMERCE',
+    tagline: 'Direct ordering without traditional payment gateway friction',
     description:
-      'Skip high credit card processing fees and cart abandonment. We build order systems that format customer carts and delivery addresses into instant WhatsApp messages.',
+      'Direct ordering without traditional payment gateway friction. Turn your site into a high-conversion social commerce funnel that formats customer orders and addresses directly into your WhatsApp inbox.',
     deliverables: [
-      'Automated formatted message generation',
-      'Seamless mobile WhatsApp & desktop WhatsApp Web routing',
-      'Customer delivery address capture',
+      'Automated formatted message generation with full cart details',
+      'Intelligent routing: native WhatsApp on mobile, WhatsApp Web on desktop',
+      'Delivery address and contact information capture',
       'Instant direct relationship with your buyers',
-      '0% processing fees, ideal for boutique & local commerce',
+      '0% processing fees, ideal for boutique, luxury & local brands',
     ],
     icon: 'MessageCircle',
     badge: 'High Conversion',
   },
   {
-    id: 'brand-portfolio',
-    title: 'Brand & Corporate Web Design',
-    tagline: 'Distinctive digital presence that commands authority',
+    id: 'brand-corporate',
+    title: 'BRAND & CORPORATE',
+    tagline: 'Distinctive digital identities designed around the business',
     description:
-      'From luxury boutiques to high-growth tech businesses, we craft bespoke visual identities with premium typography, cinematic layout balance, and responsive design.',
+      'Distinctive digital identities designed around the business. From luxury boutiques to ambitious companies, we craft bespoke visual identities with editorial typography, layout balance, and responsive design.',
     deliverables: [
-      'Bespoke layout design tailored to your industry',
-      'Editorial typography and micro-interactions',
-      'High-contrast modern dark & light aesthetics',
-      'Optimized for client conversion and trust',
+      'Bespoke layout design tailored specifically to your market',
+      'High-contrast editorial typography and micro-interactions',
+      'Elevated visual hierarchy that commands authority and trust',
+      'Mobile-optimized layouts with intentional whitespace',
     ],
     icon: 'Palette',
+    badge: 'Art Directed',
   },
   {
-    id: 'static-performance',
-    title: '100% Static Edge Architecture',
-    tagline: 'Blazing fast load times with zero server maintenance',
+    id: 'static-edge',
+    title: 'STATIC EDGE ARCHITECTURE',
+    tagline: 'Fast, secure and lightweight websites deployed through Vercel',
     description:
-      'We deploy pure static React/Vite websites to Vercel global edge CDN. This means sub-second page loads, unmatched security, and zero ongoing server hosting bills.',
+      'Fast, secure and lightweight websites deployed through Vercel. We deploy pure static React/Vite websites to Vercel global edge CDN, guaranteeing sub-second loads, zero database vulnerabilities, and zero recurring server fees.',
     deliverables: [
-      'Sub-second first contentful paint (<800ms)',
-      'Vercel static edge distribution worldwide',
-      'Zero server crashes, zero database vulnerabilities',
-      'Free from expensive recurring backend hosting bills',
+      'Sub-second first contentful paint (<800ms) worldwide',
+      'Vercel static edge distribution with 99.99% uptime',
+      'Zero database crashes, zero WordPress plugin bloat',
+      '100% free of expensive monthly database or server hosting fees',
     ],
     icon: 'Zap',
     badge: 'Vercel Optimized',
   },
 ];
 
+/* ==========================================================================
+   WHY SITENOVA (THE SITENOVA ADVANTAGE)
+   ========================================================================== */
 export const whyChooseSiteNova: ValueProp[] = [
   {
     title: 'Direct-to-Customer Conversion',
     description:
-      'Traditional e-commerce loses up to 70% of customers at the checkout form. Our WhatsApp and direct solutions convert immediately with zero payment gateway friction.',
+      'Traditional e-commerce loses up to 70% of customers at complex checkout gateways. Our WhatsApp ordering flow converts buyers directly with zero payment gateway friction.',
     metric: '70%',
     metricLabel: 'Less checkout abandonment',
     icon: 'Flame',
@@ -264,7 +303,7 @@ export const whyChooseSiteNova: ValueProp[] = [
   {
     title: 'Blazing Fast Static Performance',
     description:
-      'Static sites deployed to Vercel load nearly instantly worldwide. No slow database queries, no server lag, and 98+ Google Lighthouse scores guaranteed.',
+      'Pure static React websites deployed to Vercel edge networks load in under 1 second worldwide, eliminating database lag and boosting buyer trust.',
     metric: '<1s',
     metricLabel: 'Global page load time',
     icon: 'Gauge',
@@ -272,7 +311,7 @@ export const whyChooseSiteNova: ValueProp[] = [
   {
     title: 'Zero Server Maintenance Costs',
     description:
-      'Unlike WordPress or complex backend systems that break during plugin updates or require expensive servers, our 100% static React sites cost virtually nothing to maintain.',
+      'Unlike fragile WordPress installs that break on updates and require monthly server fees, our 100% static React sites run indefinitely with zero maintenance bills.',
     metric: '0 EGP/mo',
     metricLabel: 'Database & server fees',
     icon: 'ShieldCheck',
@@ -280,19 +319,22 @@ export const whyChooseSiteNova: ValueProp[] = [
   {
     title: 'Bespoke Craftsmanship',
     description:
-      'Every pixel is customized to reflect your brand personality—from athletic minimalism (like GStore) to dark luxury editorial (like NOIRÉ). Never cookie-cutter templates.',
+      'Every project is customized to reflect your brand personality—from haute editorial (VÉREN) to precision supplements (VITALØ). Never recycled templates.',
     metric: '100%',
     metricLabel: 'Custom tailored code',
     icon: 'Gem',
   },
 ];
 
+/* ==========================================================================
+   4-STEP PROCESS TIMELINE
+   ========================================================================== */
 export const processSteps: ProcessStep[] = [
   {
     number: '01',
     title: 'Tell Us About Your Business',
     description:
-      'Share your brand vision, target customers, product catalog or services, and aesthetic preferences through a quick WhatsApp or message chat.',
+      'Share your brand vision, target customers, product catalog or services, and aesthetic preferences through a direct WhatsApp consultation.',
     duration: 'Day 1–2',
     deliverable: 'Project scope & architecture roadmap',
   },
@@ -300,7 +342,7 @@ export const processSteps: ProcessStep[] = [
     number: '02',
     title: 'We Design Your Website',
     description:
-      'We create high-fidelity responsive layouts, interactive components (catalogs, variants, carts), and configure your custom ordering flows.',
+      'We craft bespoke editorial layouts, custom typography hierarchies, interactive components, and configure your ordering systems.',
     duration: 'Day 3–7',
     deliverable: 'Fully functional staging site',
   },
@@ -308,21 +350,21 @@ export const processSteps: ProcessStep[] = [
     number: '03',
     title: 'You Review & Refine',
     description:
-      'You interact with the live staging preview on both phone and desktop, test the ordering experience, and request any adjustments until it is perfect.',
+      'You interact with the live staging preview on both mobile and desktop, test the ordering experience, and request refinements until it is exact.',
     duration: 'Day 8–10',
-    deliverable: 'Revisions & client approval',
+    deliverable: 'Refinements & final approval',
   },
   {
     number: '04',
     title: 'Your Website Goes Live',
     description:
-      'We connect your custom domain and deploy your production build to Vercel global edge network. Your business is instantly ready to welcome clients and receive orders.',
+      'We connect your custom domain and deploy your production build to Vercel global edge network. Your business is live and ready for customers.',
     duration: 'Day 11–14',
     deliverable: 'Live Vercel deployment & ownership transfer',
   },
 ];
 
-// Sample items for the NOIRÉ WhatsApp simulator so visitors can test it live!
+// Sample items for NOIRÉ WhatsApp simulator
 export const sampleNoireFragrances = [
   { id: '1', name: 'Oud Impérial Eau de Parfum', size: '100 ml', price: 3200, notes: 'Cambodian Oud, Incense, Leather' },
   { id: '2', name: 'Santal Velours Extrait', size: '50 ml', price: 2400, notes: 'Mysore Sandalwood, Cardamom, Amber' },
@@ -330,7 +372,7 @@ export const sampleNoireFragrances = [
   { id: '4', name: 'Ambre Mystique Parfum', size: '50 ml', price: 2200, notes: 'Baltic Amber, Vanilla Bean, Benzoin' },
 ];
 
-// Sample items for the VITALØ supplement showcase
+// Sample items for VITALØ supplement showcase
 export const sampleVitaloProducts = [
   {
     id: 'vital-1',

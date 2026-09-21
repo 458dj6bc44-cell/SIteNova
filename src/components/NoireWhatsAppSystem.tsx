@@ -17,7 +17,6 @@ import {
   Phone,
   Building
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
 import { noireWhatsAppSteps, sampleNoireFragrances } from '../data/portfolioData';
 
 export const NoireWhatsAppSystem: React.FC = () => {
@@ -67,168 +66,149 @@ export const NoireWhatsAppSystem: React.FC = () => {
   };
 
   return (
-    <section id="whatsapp-ordering" className="py-24 border-t border-slate-800 relative bg-[#080B10] overflow-hidden">
-      {/* Glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none animate-pulse-glow" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="whatsapp-ordering" className="py-24 sm:py-32 border-b border-[#E5E0D6] bg-[#E5E0D6]/40 text-[#171717] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-4 shadow-sm">
-            <MessageCircle className="w-4 h-4 fill-emerald-400 text-slate-950" />
-            <span>Key Innovation: WhatsApp Social-Commerce System</span>
+        <div className="max-w-3xl mb-16">
+          <div className="flex items-center gap-3 mb-3 text-xs font-mono uppercase tracking-widest text-[#66645F]">
+            <span className="text-[#C6532E] font-bold">SOCIAL-COMMERCE INNOVATION</span>
+            <span>•</span>
+            <span>NOIRÉ ARCHITECTURE</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight">
-            How NOIRÉ's <span className="text-emerald-400">WhatsApp Ordering System</span> Works
+          <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
+            The WhatsApp Ordering Engine
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg mt-4 leading-relaxed">
-            The website does <span className="text-white font-semibold underline decoration-emerald-500/50">NOT</span> require a traditional online payment checkout.
-            Instead, it converts customer carts and delivery addresses into structured WhatsApp orders with zero friction and zero payment gateway cuts.
+          <p className="text-lg text-[#66645F] font-normal leading-relaxed">
+            The website does not require traditional credit card forms or payment gateways. Instead, it compiles customer selections and delivery addresses into structured WhatsApp orders with zero transaction fees and immediate customer dialogue.
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-            <motion.a
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <a
               id="noire-whatsapp-live-link"
               href="https://noire-store-five.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm transition-colors shadow-lg shadow-emerald-500/20 group"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[8px] bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm group"
             >
               <span>View Live Website</span>
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </motion.a>
-            <div className="text-xs text-slate-400 font-mono">
-              Live URL: noire-store-five.vercel.app
-            </div>
+              <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+            <span className="text-xs font-mono text-[#66645F]">
+              Direct store: noire-store-five.vercel.app
+            </span>
           </div>
-        </motion.div>
+        </div>
 
         {/* 9-Step Visual Journey Breakdown */}
-        <div className="mb-20">
-          <div className="text-center mb-8">
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-              The 9-Step Customer Ordering Flow
+        <div className="mb-16">
+          <div className="mb-6 pb-4 border-b border-[#D5CFC3]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#66645F]">
+              9-Step Customer Conversion Flow
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {noireWhatsAppSteps.map((step, idx) => (
-              <motion.div
+            {noireWhatsAppSteps.map(step => (
+              <div
                 key={step.stepNumber}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                whileHover={{ y: -4 }}
-                className="relative rounded-2xl bg-slate-900/60 border border-slate-800/80 p-5 hover:border-emerald-500/40 transition-all group hover:bg-slate-900/90 shadow-lg"
+                className="rounded-[8px] bg-[#F2EFE8] border border-[#D5CFC3] p-6 flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold flex items-center justify-center border border-emerald-500/30">
-                    0{step.stepNumber}
-                  </span>
-                  {step.stepNumber === 7 && (
-                    <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-medium">
-                      <Smartphone className="w-3 h-3" /> Mobile
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="w-7 h-7 rounded-[4px] bg-[#171717] text-[#F2EFE8] font-mono text-xs font-bold flex items-center justify-center">
+                      0{step.stepNumber}
                     </span>
-                  )}
-                  {step.stepNumber === 8 && (
-                    <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-medium">
-                      <Laptop className="w-3 h-3" /> Desktop
-                    </span>
-                  )}
-                  {step.stepNumber === 9 && (
-                    <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-medium">
-                      <Sparkles className="w-3 h-3" /> Direct Sale
-                    </span>
-                  )}
+                    {step.stepNumber === 7 && (
+                      <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-[#73765A]/15 text-[#73765A] font-mono font-bold">
+                        <Smartphone className="w-3 h-3" /> Mobile
+                      </span>
+                    )}
+                    {step.stepNumber === 8 && (
+                      <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-[#C6532E]/15 text-[#C6532E] font-mono font-bold">
+                        <Laptop className="w-3 h-3" /> Desktop
+                      </span>
+                    )}
+                    {step.stepNumber === 9 && (
+                      <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-[#171717] text-[#F2EFE8] font-mono font-bold">
+                        Direct Close
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="text-base font-bold text-[#171717]">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-[#66645F] mt-2 leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
 
-                <h3 className="text-base font-bold text-white font-heading group-hover:text-emerald-300 transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
-                  {step.description}
-                </p>
-
                 {step.highlight && (
-                  <div className="mt-3 text-[11px] font-mono text-emerald-400/90 bg-emerald-950/30 px-2.5 py-1 rounded border border-emerald-500/20">
+                  <div className="mt-4 text-[11px] font-mono text-[#73765A] bg-white px-2.5 py-1.5 rounded-[4px] border border-[#E5E0D6]">
                     {step.highlight}
                   </div>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Interactive Live Simulator: Potential Clients Can Test the Exact NOIRÉ WhatsApp Engine */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-          className="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 p-6 sm:p-10 shadow-2xl relative"
-        >
+        {/* Interactive Live Simulator */}
+        <div className="rounded-[8px] bg-white border border-[#D5CFC3] p-6 sm:p-10 shadow-lg">
           <div className="max-w-3xl mb-8">
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2">
-              <Sparkles className="w-4 h-4" /> Live Interactive Demonstration
+            <span className="text-xs font-mono uppercase tracking-widest text-[#C6532E] font-bold block mb-2">
+              Interactive Simulation
             </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-              Experience the WhatsApp Order Formatter
+            <h3 className="text-2xl sm:text-3xl font-serif-display font-normal text-[#171717]">
+              Test the WhatsApp Order Formatter
             </h3>
-            <p className="text-slate-300 text-sm mt-1.5">
-              Try adjusting the customer delivery information and product below. Watch how NOIRÉ compiles the data into an
-              instant, clean WhatsApp message ready for dispatch with one click.
+            <p className="text-[#66645F] text-sm mt-2">
+              Adjust delivery details and item quantities to see how the engine instantly parses inputs into an error-free WhatsApp message payload.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Simulator Inputs (5 cols) */}
+            {/* Simulator Inputs (6 cols) */}
             <div className="lg:col-span-6 space-y-4">
-              <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-3.5">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+              <div className="p-5 rounded-[6px] bg-[#F2EFE8] border border-[#D5CFC3] space-y-3.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#171717] block">
                   1. Select Fragrance & Quantity
                 </span>
-                
+
                 <div className="grid grid-cols-2 gap-2">
-                  {sampleNoireFragrances.map((f) => (
+                  {sampleNoireFragrances.map(f => (
                     <button
                       key={f.id}
                       onClick={() => setSelectedPerfumeId(f.id)}
-                      className={`p-2.5 rounded-xl text-left border text-xs transition-all active:scale-95 ${
+                      className={`p-2.5 rounded-[4px] text-left border text-xs transition-all ${
                         selectedPerfumeId === f.id
-                          ? 'bg-emerald-500/15 border-emerald-500 text-white shadow-sm'
-                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                          ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
+                          : 'bg-white text-[#171717] border-[#D5CFC3] hover:border-[#73765A]'
                       }`}
                     >
                       <div className="font-bold truncate">{f.name.split(' ')[0]}</div>
-                      <div className="text-[11px] text-emerald-400 font-medium">{f.price.toLocaleString()} EGP • {f.size}</div>
+                      <div className={`text-[11px] font-mono mt-0.5 ${selectedPerfumeId === f.id ? 'text-[#C6532E]' : 'text-[#66645F]'}`}>
+                        {f.price.toLocaleString()} EGP • {f.size}
+                      </div>
                     </button>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between pt-2">
-                  <span className="text-xs text-slate-400">Order Quantity:</span>
+                <div className="flex items-center justify-between pt-2 border-t border-[#D5CFC3]">
+                  <span className="text-xs font-medium text-[#66645F]">Quantity:</span>
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold text-xs active:scale-90 transition-transform"
+                      className="w-7 h-7 rounded-[4px] bg-white border border-[#D5CFC3] text-[#171717] flex items-center justify-center font-bold text-xs"
                     >
                       -
                     </button>
-                    <span className="text-xs font-bold text-white px-2">{quantity}</span>
+                    <span className="text-xs font-bold text-[#171717] px-2">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white flex items-center justify-center font-bold text-xs active:scale-90 transition-transform"
+                      className="w-7 h-7 rounded-[4px] bg-white border border-[#D5CFC3] text-[#171717] flex items-center justify-center font-bold text-xs"
                     >
                       +
                     </button>
@@ -237,58 +217,58 @@ export const NoireWhatsAppSystem: React.FC = () => {
               </div>
 
               {/* Delivery Details Form Simulation */}
-              <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
-                  2. Customer Delivery Details (Required by NOIRÉ)
+              <div className="p-5 rounded-[6px] bg-[#F2EFE8] border border-[#D5CFC3] space-y-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#171717] block">
+                  2. Customer Delivery Details
                 </span>
 
                 <div className="space-y-2.5">
                   <div>
-                    <label className="text-[11px] text-slate-400 flex items-center gap-1 mb-1">
-                      <User className="w-3 h-3 text-emerald-400" /> Full Name
+                    <label className="text-[11px] text-[#66645F] flex items-center gap-1 mb-1 font-bold uppercase">
+                      <User className="w-3 h-3 text-[#73765A]" /> Full Name
                     </label>
                     <input
                       type="text"
                       value={customerName}
-                      onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500"
+                      onChange={e => setCustomerName(e.target.value)}
+                      className="w-full px-3 py-2 rounded-[4px] bg-white border border-[#D5CFC3] text-xs text-[#171717] focus:outline-none focus:border-[#C6532E]"
                     />
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="text-[11px] text-slate-400 flex items-center gap-1 mb-1">
-                        <Phone className="w-3 h-3 text-emerald-400" /> Phone Number
+                      <label className="text-[11px] text-[#66645F] flex items-center gap-1 mb-1 font-bold uppercase">
+                        <Phone className="w-3 h-3 text-[#73765A]" /> Phone Number
                       </label>
                       <input
                         type="text"
                         value={customerPhone}
-                        onChange={(e) => setCustomerPhone(e.target.value)}
-                        className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500"
+                        onChange={e => setCustomerPhone(e.target.value)}
+                        className="w-full px-3 py-2 rounded-[4px] bg-white border border-[#D5CFC3] text-xs text-[#171717] focus:outline-none focus:border-[#C6532E]"
                       />
                     </div>
                     <div>
-                      <label className="text-[11px] text-slate-400 flex items-center gap-1 mb-1">
-                        <Building className="w-3 h-3 text-emerald-400" /> City
+                      <label className="text-[11px] text-[#66645F] flex items-center gap-1 mb-1 font-bold uppercase">
+                        <Building className="w-3 h-3 text-[#73765A]" /> City
                       </label>
                       <input
                         type="text"
                         value={customerCity}
-                        onChange={(e) => setCustomerCity(e.target.value)}
-                        className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500"
+                        onChange={e => setCustomerCity(e.target.value)}
+                        className="w-full px-3 py-2 rounded-[4px] bg-white border border-[#D5CFC3] text-xs text-[#171717] focus:outline-none focus:border-[#C6532E]"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-[11px] text-slate-400 flex items-center gap-1 mb-1">
-                      <MapPin className="w-3 h-3 text-emerald-400" /> Delivery Address
+                    <label className="text-[11px] text-[#66645F] flex items-center gap-1 mb-1 font-bold uppercase">
+                      <MapPin className="w-3 h-3 text-[#73765A]" /> Delivery Address
                     </label>
                     <input
                       type="text"
                       value={customerAddress}
-                      onChange={(e) => setCustomerAddress(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-emerald-500"
+                      onChange={e => setCustomerAddress(e.target.value)}
+                      className="w-full px-3 py-2 rounded-[4px] bg-white border border-[#D5CFC3] text-xs text-[#171717] focus:outline-none focus:border-[#C6532E]"
                     />
                   </div>
                 </div>
@@ -297,105 +277,79 @@ export const NoireWhatsAppSystem: React.FC = () => {
 
             {/* Generated WhatsApp Message Preview & Live Bubble (6 cols) */}
             <div className="lg:col-span-6 flex flex-col h-full">
-              <div className="rounded-2xl bg-[#0B141A] border border-[#202C33] overflow-hidden shadow-2xl flex-1 flex flex-col">
+              <div className="rounded-[8px] bg-[#171717] border border-[#2A2B29] overflow-hidden shadow-xl flex-1 flex flex-col">
                 {/* WhatsApp Chat Header */}
-                <div className="px-4 py-3 bg-[#202C33] flex items-center justify-between border-b border-[#2A3942]">
+                <div className="px-4 py-3 bg-[#20211F] flex items-center justify-between border-b border-[#30312F]">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xs">
+                    <div className="w-7 h-7 rounded-full bg-[#73765A] flex items-center justify-center text-white font-bold text-xs">
                       N
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#E9EDEF]">NOIRÉ Parfums Concierge</div>
-                      <div className="text-[10px] text-emerald-400">Online • WhatsApp Verified</div>
+                      <div className="text-xs font-bold text-[#F2EFE8]">NOIRÉ Parfums Concierge</div>
+                      <div className="text-[10px] text-[#E5E0D6]/60">Verified Business Channel</div>
                     </div>
                   </div>
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">
-                    Auto-Formatted Message
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[#73765A]/20 text-[#E5E0D6] font-mono">
+                    Formatted Payload
                   </span>
                 </div>
 
                 {/* WhatsApp Chat Area */}
-                <div className="p-4 sm:p-5 flex-1 bg-[radial-gradient(#111b21_1px,transparent_1px)] [background-size:16px_16px] bg-[#0c1317] flex flex-col justify-between">
+                <div className="p-4 sm:p-5 flex-1 bg-[#141514] flex flex-col justify-between">
                   {/* Sent Message Bubble */}
-                  <div className="self-end max-w-[92%] rounded-2xl rounded-tr-none bg-[#005C4B] text-[#E9EDEF] p-4 text-xs font-sans shadow-md border border-[#005c4b] relative">
-                    <pre className="font-sans whitespace-pre-wrap leading-relaxed text-[11px] sm:text-xs text-slate-100">
+                  <div className="self-end max-w-[95%] rounded-[6px] bg-[#20211F] border border-[#383A37] text-[#F2EFE8] p-4 text-xs font-sans shadow-md">
+                    <pre className="font-mono whitespace-pre-wrap leading-relaxed text-[11px] text-[#E5E0D6]">
                       {formattedMessage}
                     </pre>
-                    <div className="text-[9px] text-emerald-200/70 text-right mt-2 flex items-center justify-end gap-1">
-                      <span>Just now</span>
-                      <Check className="w-3 h-3 text-cyan-300" />
-                    </div>
                   </div>
 
                   {/* Actions to Test or Copy */}
-                  <div className="mt-6 pt-4 border-t border-[#202C33] space-y-2.5">
+                  <div className="mt-6 pt-4 border-t border-[#30312F] space-y-2.5">
                     <div className="flex gap-2">
-                      <motion.button
+                      <button
                         onClick={handleTestWhatsApp}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#0B141A] font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-md"
+                        className="flex-1 py-2.5 px-3 rounded-[6px] bg-[#C6532E] hover:bg-[#b04523] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                       >
                         <Send className="w-3.5 h-3.5" />
                         <span>Test Send to WhatsApp</span>
-                      </motion.button>
+                      </button>
 
-                      <motion.button
+                      <button
                         onClick={copyToClipboard}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="py-2.5 px-3 rounded-xl bg-[#202C33] hover:bg-[#2A3942] text-[#E9EDEF] font-medium text-xs flex items-center justify-center gap-1.5 transition-colors border border-[#2A3942]"
+                        className="py-2.5 px-3 rounded-[6px] bg-[#20211F] hover:bg-[#30312F] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors border border-[#383A37]"
                       >
                         {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                         <span>{copied ? 'Copied' : 'Copy'}</span>
-                      </motion.button>
+                      </button>
                     </div>
 
-                    <p className="text-[11px] text-[#8696A0] text-center">
-                      On mobile, this opens the native WhatsApp app. On desktop, it opens WhatsApp Web with the message pre-filled.
+                    <p className="text-[11px] text-[#66645F] text-center">
+                      Opens native WhatsApp on mobile or WhatsApp Web on desktop with pre-filled message.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Why this solution converts higher for businesses */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            whileHover={{ y: -3 }}
-            className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center hover:border-emerald-500/30 transition-colors"
-          >
-            <span className="text-emerald-400 font-bold text-sm block">0% Payment Merchant Fees</span>
-            <span className="text-xs text-slate-400 mt-1 block">Save 3–5% on every single order by bypassing payment processing fees.</span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            whileHover={{ y: -3 }}
-            className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center hover:border-emerald-500/30 transition-colors"
-          >
-            <span className="text-emerald-400 font-bold text-sm block">Instant Direct Relationship</span>
-            <span className="text-xs text-slate-400 mt-1 block">Upsell, recommend fragrances, and build repeat loyalty inside WhatsApp.</span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            whileHover={{ y: -3 }}
-            className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 text-center hover:border-emerald-500/30 transition-colors"
-          >
-            <span className="text-emerald-400 font-bold text-sm block">100% Reliable Static Setup</span>
-            <span className="text-xs text-slate-400 mt-1 block">Zero database to break, zero server downtime, and runs forever on Vercel.</span>
-          </motion.div>
+          <div className="p-5 rounded-[8px] bg-[#F2EFE8] border border-[#D5CFC3] text-center">
+            <span className="font-serif-display text-2xl font-bold text-[#C6532E] block">0%</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#171717] mt-1 block">Merchant Gateway Fees</span>
+            <span className="text-xs text-[#66645F] mt-1 block">Saves 3–5% on transaction fees per order.</span>
+          </div>
+          <div className="p-5 rounded-[8px] bg-[#F2EFE8] border border-[#D5CFC3] text-center">
+            <span className="font-serif-display text-2xl font-bold text-[#171717] block">1:1</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#171717] mt-1 block">Direct Client Chat</span>
+            <span className="text-xs text-[#66645F] mt-1 block">Build direct relationships and repeat loyalty.</span>
+          </div>
+          <div className="p-5 rounded-[8px] bg-[#F2EFE8] border border-[#D5CFC3] text-center">
+            <span className="font-serif-display text-2xl font-bold text-[#73765A] block">100%</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#171717] mt-1 block">Edge Reliability</span>
+            <span className="text-xs text-[#66645F] mt-1 block">Zero database maintenance, 99.99% uptime.</span>
+          </div>
         </div>
       </div>
     </section>
