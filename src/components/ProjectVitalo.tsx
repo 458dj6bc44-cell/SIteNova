@@ -25,29 +25,29 @@ export const ProjectVitalo: React.FC = () => {
   return (
     <section
       id="vital0"
-      className="py-20 sm:py-28 bg-[#F2EFE8] text-[#171717] border-b border-[#E5E0D6]"
+      className="py-20 sm:py-28 bg-[#0B0C0E] text-[#F4F4F6] border-b border-[#1E2028]"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Project Information Hierarchy (#13) */}
+          {/* Left Column: Project Information */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#66645F] block mb-2">
-                {vitaloProject.category}
+              <span className="text-xs font-mono-tech uppercase tracking-widest text-[#FF4D15] font-bold block mb-2">
+                02 • {vitaloProject.category}
               </span>
-              <h3 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
+              <h3 className="text-4xl sm:text-6xl font-heading font-extrabold text-white tracking-tight leading-none mb-4">
                 VITALØ
               </h3>
-              <p className="text-base sm:text-lg text-[#66645F] font-normal leading-relaxed">
+              <p className="text-base sm:text-lg text-[#9FA4B2] font-normal leading-relaxed">
                 {vitaloProject.description}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-[#E5E0D6]">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#66645F] block mb-2">
+            <div className="pt-4 border-t border-[#1E2028]">
+              <span className="text-[11px] font-mono-tech uppercase tracking-widest text-[#646876] block mb-2">
                 Key Capabilities
               </span>
-              <p className="text-xs text-[#171717] font-medium leading-relaxed">
+              <p className="text-xs text-[#E1E4EB] font-medium leading-relaxed font-sans-ui">
                 Instant client-side catalog filtering, multi-variant flavor and serving size selectors, slide-out cart, sub-second edge loads.
               </p>
             </div>
@@ -57,48 +57,48 @@ export const ProjectVitalo: React.FC = () => {
                 href={vitaloProject.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-[4px] bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-[5px] bg-[#14151B] hover:bg-[#FF4D15] text-white border border-[#2B2E3C] hover:border-[#FF4D15] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
               >
-                <span>VIEW PROJECT</span>
+                <span>VIEW LIVE STORE</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Right Column: Distinct Visual Composition (Interactive Storefront Surface) */}
-          <div className="lg:col-span-7 border border-[#E5E0D6] bg-white p-6 sm:p-8 rounded-[4px]">
+          {/* Right Column: Interactive Storefront Surface */}
+          <div className="lg:col-span-7 border border-[#22242D] bg-[#121318] p-6 sm:p-8 rounded-[8px] shadow-xl">
             {/* Header bar of the preview */}
-            <div className="flex items-center justify-between pb-5 border-b border-[#E5E0D6]">
+            <div className="flex items-center justify-between pb-5 border-b border-[#22242D]">
               <div>
-                <span className="font-mono text-xs font-bold text-[#171717] uppercase tracking-wider">
+                <span className="font-mono-tech text-xs font-bold text-white uppercase tracking-wider">
                   STOREFRONT PREVIEW
                 </span>
-                <span className="text-xs text-[#66645F] block">vital0.vercel.app</span>
+                <span className="text-xs font-mono-tech text-[#646876] block">vital0.vercel.app</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-mono text-[#171717]">
-                <ShoppingBag className="w-4 h-4 text-[#C6532E]" />
+              <div className="flex items-center gap-2 text-xs font-mono-tech text-white">
+                <ShoppingBag className="w-4 h-4 text-[#FF4D15]" />
                 <span>Cart ({cartCount})</span>
               </div>
             </div>
 
             {/* Catalog Selector */}
-            <div className="py-5 border-b border-[#E5E0D6]">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[#66645F] block mb-2">
+            <div className="py-5 border-b border-[#22242D]">
+              <span className="text-[11px] font-mono-tech uppercase tracking-wider text-[#646876] block mb-2">
                 Select Catalog Item:
               </span>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {sampleVitaloProducts.map(p => (
                   <button
                     key={p.id}
                     onClick={() => handleProductSelect(p)}
-                    className={`p-2.5 text-left border rounded-[2px] transition-all text-xs ${
+                    className={`p-2.5 text-left border rounded-[5px] transition-all text-xs ${
                       selectedProduct.id === p.id
-                        ? 'border-[#171717] bg-[#F2EFE8] font-bold text-[#171717]'
-                        : 'border-[#E5E0D6] text-[#66645F] hover:border-[#171717]'
+                        ? 'border-[#FF4D15] bg-[#1B1D25] font-bold text-white shadow-sm'
+                        : 'border-[#22242D] bg-[#0E0F13] text-[#9FA4B2] hover:border-[#353846]'
                     }`}
                   >
                     <div className="truncate font-sans-ui">{p.name}</div>
-                    <div className="text-[11px] text-[#C6532E] font-mono mt-0.5">{p.price} EGP</div>
+                    <div className="text-[11px] text-[#FF4D15] font-mono-tech mt-0.5">{p.price} EGP</div>
                   </button>
                 ))}
               </div>
@@ -108,28 +108,28 @@ export const ProjectVitalo: React.FC = () => {
             <div className="py-5 space-y-4">
               <div className="flex items-baseline justify-between">
                 <div>
-                  <h4 className="text-xl font-serif-display text-[#171717]">{selectedProduct.name}</h4>
-                  <p className="text-xs text-[#66645F] mt-0.5">{selectedProduct.tagline}</p>
+                  <h4 className="text-xl font-heading font-bold text-white">{selectedProduct.name}</h4>
+                  <p className="text-xs text-[#9FA4B2] mt-0.5">{selectedProduct.tagline}</p>
                 </div>
-                <div className="text-xl font-mono font-bold text-[#171717]">
+                <div className="text-xl font-mono-tech font-bold text-[#FF4D15]">
                   {currentPrice.toLocaleString()} EGP
                 </div>
               </div>
 
               {/* Flavor Selector */}
               <div>
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#66645F] block mb-1.5">
-                  Flavor: <span className="text-[#171717] font-bold">{selectedFlavor}</span>
+                <span className="text-[11px] font-mono-tech uppercase tracking-wider text-[#646876] block mb-1.5">
+                  Flavor: <span className="text-white font-bold">{selectedFlavor}</span>
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedProduct.flavors.map(f => (
                     <button
                       key={f}
                       onClick={() => setSelectedFlavor(f)}
-                      className={`px-3 py-1 text-xs rounded-[2px] border transition-colors ${
+                      className={`px-3 py-1 text-xs rounded-[4px] border transition-colors ${
                         selectedFlavor === f
-                          ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
-                          : 'bg-white text-[#66645F] border-[#E5E0D6] hover:border-[#171717]'
+                          ? 'bg-[#FF4D15] text-white border-[#FF4D15] font-semibold'
+                          : 'bg-[#0E0F13] text-[#9FA4B2] border-[#22242D] hover:border-[#353846]'
                       }`}
                     >
                       {f}
@@ -140,26 +140,26 @@ export const ProjectVitalo: React.FC = () => {
 
               {/* Size Selector */}
               <div>
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#66645F] block mb-1.5">
+                <span className="text-[11px] font-mono-tech uppercase tracking-wider text-[#646876] block mb-1.5">
                   Serving Size:
                 </span>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setSelectedServingSize('standard')}
-                    className={`px-3 py-1.5 text-xs rounded-[2px] border transition-colors ${
+                    className={`px-3 py-1.5 text-xs rounded-[4px] border transition-colors ${
                       selectedServingSize === 'standard'
-                        ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
-                        : 'bg-white text-[#66645F] border-[#E5E0D6]'
+                        ? 'bg-[#1C1E27] text-white border-[#FF4D15] font-semibold'
+                        : 'bg-[#0E0F13] text-[#9FA4B2] border-[#22242D]'
                     }`}
                   >
                     Standard ({selectedProduct.size})
                   </button>
                   <button
                     onClick={() => setSelectedServingSize('bulk')}
-                    className={`px-3 py-1.5 text-xs rounded-[2px] border transition-colors ${
+                    className={`px-3 py-1.5 text-xs rounded-[4px] border transition-colors ${
                       selectedServingSize === 'bulk'
-                        ? 'bg-[#171717] text-[#F2EFE8] border-[#171717]'
-                        : 'bg-white text-[#66645F] border-[#E5E0D6]'
+                        ? 'bg-[#1C1E27] text-white border-[#FF4D15] font-semibold'
+                        : 'bg-[#0E0F13] text-[#9FA4B2] border-[#22242D]'
                     }`}
                   >
                     Bulk Size (2x)
@@ -170,10 +170,10 @@ export const ProjectVitalo: React.FC = () => {
               {/* Add to Cart CTA */}
               <button
                 onClick={handleAddToCart}
-                className={`w-full py-3 rounded-[2px] text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 ${
+                className={`w-full py-3 rounded-[5px] text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
                   addedSuccess
-                    ? 'bg-[#73765A] text-[#F2EFE8]'
-                    : 'bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8]'
+                    ? 'bg-emerald-600 text-white'
+                    : 'bg-[#FF4D15] hover:bg-[#E63E07] text-white shadow-md shadow-[#FF4D15]/20'
                 }`}
               >
                 {addedSuccess ? (

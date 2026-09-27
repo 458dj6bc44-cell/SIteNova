@@ -4,57 +4,57 @@ export const ProcessSection: React.FC = () => {
   const steps = [
     {
       num: '01',
-      title: 'Discover',
+      title: 'Strategy & Scope',
       headline: "Tell us what you're building",
-      desc: 'Send us a message with your business details, products, and vision. We discuss requirements directly without middlemen.',
+      desc: 'Send us a message with your business goals, brand assets, and vision. We analyze your requirements and outline a transparent scope and fixed timeline within 24 hours.',
     },
     {
       num: '02',
-      title: 'Design',
-      headline: 'We design & build your site',
-      desc: 'We architect bespoke editorial layouts, custom typography, and performant React code tailored strictly around your brand.',
+      title: 'Design & Code',
+      headline: 'We design & engineer your build',
+      desc: 'We craft high-fidelity responsive layouts, custom typography rhythm, and performant React components strictly tailored around your products and conversion funnels.',
     },
     {
       num: '03',
-      title: 'Refine',
-      headline: 'You test & we refine',
-      desc: 'You preview the staging build on your own phone and computer. We polish the interactions, copy, and details together.',
+      title: 'Interactive Review',
+      headline: 'You test & we refine together',
+      desc: 'You click through the live staging build on your own mobile device and desktop. We fine-tune micro-interactions, copy, cart workflows, and performance.',
     },
     {
       num: '04',
-      title: 'Launch',
-      headline: 'Live website & full handover',
-      desc: 'We connect your domain, deploy to global edge CDN infrastructure, and hand over a fast, maintenance-free site.',
+      title: 'Global Launch',
+      headline: 'Edge deployment & full handover',
+      desc: 'We connect your custom domain, deploy to global edge CDN infrastructure, and hand over a blazing fast, zero-maintenance digital storefront ready to convert.',
     },
   ];
 
   return (
     <section
       id="process"
-      className="py-24 sm:py-32 bg-[#F2EFE8] text-[#171717] border-b border-[#E5E0D6]"
+      className="py-24 sm:py-32 bg-[#0E0F13] text-[#F4F4F6] border-b border-[#1E2028]"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="mb-16 sm:mb-20 pb-8 border-b border-[#E5E0D6] flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="mb-16 sm:mb-20 pb-8 border-b border-[#1E2028] flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#C6532E] font-bold block mb-3">
-              HOW WE WORK
+            <span className="text-xs font-mono-tech uppercase tracking-widest text-[#FF4D15] font-bold block mb-3">
+              HOW WE DELIVER
             </span>
-            <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
-              Simple Collaboration
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-tight mb-4">
+              Our 4-Step Process
             </h2>
-            <p className="text-base sm:text-lg text-[#66645F] font-normal leading-relaxed">
-              No bloated enterprise agile ceremonies, account managers, or bureaucracy. You work directly with the people actually designing and building your site.
+            <p className="text-base sm:text-lg text-[#9FA4B2] font-normal leading-relaxed">
+              No bloated corporate overhead, no layers of account executives. You collaborate directly with senior creators from initial brief to production launch.
             </p>
           </div>
 
-          <span className="text-xs font-mono uppercase tracking-widest text-[#73765A]">
-            7–14 Days Typical Turnaround
+          <span className="text-xs font-mono-tech uppercase tracking-widest text-[#646876]">
+            7–14 Days Typical Delivery Window
           </span>
         </div>
 
-        {/* Clean Sequential Editorial Flow (#17) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-[#E5E0D6]">
+        {/* Clean Sequential Flow */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-[#22242D]">
           {steps.map((step, idx) => (
             <div
               key={step.num}
@@ -64,19 +64,19 @@ export const ProcessSection: React.FC = () => {
             >
               <div>
                 {/* Large Number Visual Anchor */}
-                <span className="font-serif-display text-5xl sm:text-6xl text-[#C6532E] font-normal block mb-4">
+                <span className="font-heading text-5xl sm:text-6xl text-[#FF4D15] font-extrabold block mb-4">
                   {step.num}
                 </span>
 
-                <span className="text-xs font-mono uppercase tracking-widest text-[#66645F] block mb-1">
+                <span className="text-xs font-mono-tech uppercase tracking-widest text-[#646876] block mb-1">
                   {step.title}
                 </span>
 
-                <h3 className="text-xl sm:text-2xl font-serif-display text-[#171717] mb-3">
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-3">
                   {step.headline}
                 </h3>
 
-                <p className="text-sm text-[#66645F] leading-relaxed">
+                <p className="text-sm text-[#9FA4B2] leading-relaxed font-sans-ui">
                   {step.desc}
                 </p>
               </div>

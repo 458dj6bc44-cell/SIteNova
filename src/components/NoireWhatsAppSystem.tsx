@@ -47,56 +47,55 @@ Please confirm availability and dispatch schedule. Thank you!`;
   return (
     <section
       id="whatsapp-ordering"
-      className="py-20 sm:py-28 bg-[#E5E0D6]/30 text-[#171717] border-b border-[#E5E0D6]"
+      className="py-20 sm:py-28 bg-[#0E0F13] text-[#F4F4F6] border-b border-[#1E2028]"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Section Hierarchy: 1. WHAT IT DOES (#19) */}
+        {/* Section Header: Real Differentiator */}
         <div className="max-w-3xl mb-14">
-          <div className="flex items-center gap-3 mb-3 text-xs font-mono uppercase tracking-widest text-[#66645F]">
-            <span className="text-[#C6532E] font-bold">REAL DIFFERENTIATOR</span>
+          <div className="flex items-center gap-3 mb-3 text-xs font-mono-tech uppercase tracking-widest text-[#9FA4B2]">
+            <span className="text-[#FF4D15] font-bold">REAL DIFFERENTIATOR</span>
             <span>•</span>
-            <span>WHATSAPP COMMERCE FLOW</span>
+            <span>WHATSAPP COMMERCE ENGINE</span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-serif-display font-normal text-[#171717] tracking-tight leading-none mb-4">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-tight mb-4">
             Direct WhatsApp Ordering
           </h2>
 
-          <p className="text-base sm:text-lg text-[#66645F] font-normal leading-relaxed">
-            Sell directly to your customers with zero payment gateways, zero transaction fees, and zero software commissions. Customer selections and delivery addresses compile instantly into structured WhatsApp orders.
+          <p className="text-base sm:text-lg text-[#9FA4B2] font-normal leading-relaxed">
+            Sell directly to your customers with zero payment gateways, zero transaction fees, and zero third-party commissions. Customer selections and delivery addresses compile instantly into structured WhatsApp orders.
           </p>
         </div>
 
-        {/* Section Hierarchy: 2. HOW IT WORKS (#19) */}
+        {/* Section Steps Flow */}
         <div className="mb-12">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#66645F] block mb-4">
-            How It Works:
+          <span className="text-xs font-mono-tech uppercase tracking-widest text-[#646876] block mb-4">
+            How The Engine Works:
           </span>
 
-          {/* Clean 4-Step Flow Sequence */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-8 border-b border-[#D5CFC3]">
-            <div className="p-4 bg-white border border-[#E5E0D6] rounded-[2px]">
-              <span className="font-mono text-xs font-bold text-[#C6532E] block mb-1">01</span>
-              <span className="font-sans-ui text-sm font-bold text-[#171717] block">BROWSE</span>
-              <span className="text-xs text-[#66645F] mt-1 block">Customer explores your custom catalog</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-8 border-b border-[#22242D]">
+            <div className="p-4 bg-[#121318] border border-[#22242D] rounded-[6px]">
+              <span className="font-mono-tech text-xs font-bold text-[#FF4D15] block mb-1">01</span>
+              <span className="font-heading text-sm font-bold text-white block">BROWSE</span>
+              <span className="text-xs text-[#9FA4B2] mt-1 block">Customer explores your custom catalog</span>
             </div>
 
-            <div className="p-4 bg-white border border-[#E5E0D6] rounded-[2px]">
-              <span className="font-mono text-xs font-bold text-[#C6532E] block mb-1">02</span>
-              <span className="font-sans-ui text-sm font-bold text-[#171717] block">ADD TO CART</span>
-              <span className="text-xs text-[#66645F] mt-1 block">Selects variants, sizes, and quantities</span>
+            <div className="p-4 bg-[#121318] border border-[#22242D] rounded-[6px]">
+              <span className="font-mono-tech text-xs font-bold text-[#FF4D15] block mb-1">02</span>
+              <span className="font-heading text-sm font-bold text-white block">ADD TO CART</span>
+              <span className="text-xs text-[#9FA4B2] mt-1 block">Selects variants, sizes, and quantities</span>
             </div>
 
-            <div className="p-4 bg-white border border-[#E5E0D6] rounded-[2px]">
-              <span className="font-mono text-xs font-bold text-[#C6532E] block mb-1">03</span>
-              <span className="font-sans-ui text-sm font-bold text-[#171717] block">ENTER DETAILS</span>
-              <span className="text-xs text-[#66645F] mt-1 block">Name, phone, delivery address & notes</span>
+            <div className="p-4 bg-[#121318] border border-[#22242D] rounded-[6px]">
+              <span className="font-mono-tech text-xs font-bold text-[#FF4D15] block mb-1">03</span>
+              <span className="font-heading text-sm font-bold text-white block">ENTER DETAILS</span>
+              <span className="text-xs text-[#9FA4B2] mt-1 block">Name, phone, delivery address & notes</span>
             </div>
 
-            <div className="p-4 bg-[#171717] text-[#F2EFE8] border border-[#171717] rounded-[2px]">
-              <span className="font-mono text-xs font-bold text-[#C6532E] block mb-1">04</span>
-              <span className="font-sans-ui text-sm font-bold text-[#F2EFE8] block">ORDER ON WHATSAPP</span>
-              <span className="text-xs text-[#E5E0D6]/70 mt-1 block">1-click direct dispatch into your chat</span>
+            <div className="p-4 bg-[#1B1D25] text-white border border-[#FF4D15]/50 rounded-[6px]">
+              <span className="font-mono-tech text-xs font-bold text-[#FF4D15] block mb-1">04</span>
+              <span className="font-heading text-sm font-bold text-white block">ORDER ON WHATSAPP</span>
+              <span className="text-xs text-[#9FA4B2] mt-1 block">1-tap direct dispatch into your chat</span>
             </div>
           </div>
         </div>
@@ -104,19 +103,19 @@ Please confirm availability and dispatch schedule. Thank you!`;
         {/* Practical Simulator: Left form, Right structured WhatsApp message */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
           {/* Customer Input Panel */}
-          <div className="lg:col-span-6 bg-white p-6 sm:p-8 rounded-[4px] border border-[#E5E0D6] space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#66645F] block pb-2 border-b border-[#E5E0D6]">
+          <div className="lg:col-span-6 bg-[#121318] p-6 sm:p-8 rounded-[8px] border border-[#22242D] space-y-4 shadow-xl">
+            <span className="text-xs font-mono-tech uppercase tracking-widest text-[#646876] block pb-2 border-b border-[#22242D]">
               Customer Checkout Fields:
             </span>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#171717] block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-white block mb-1 font-mono-tech">
                 Select Item
               </label>
               <select
                 value={selectedPerfumeId}
                 onChange={e => setSelectedPerfumeId(e.target.value)}
-                className="w-full p-2.5 bg-[#F2EFE8] border border-[#E5E0D6] rounded-[2px] text-xs font-medium text-[#171717] focus:outline-none focus:border-[#171717]"
+                className="w-full p-2.5 bg-[#0E0F13] border border-[#22242D] rounded-[5px] text-xs font-medium text-white focus:outline-none focus:border-[#FF4D15]"
               >
                 {sampleNoireFragrances.map(f => (
                   <option key={f.id} value={f.id}>
@@ -128,43 +127,43 @@ Please confirm availability and dispatch schedule. Thank you!`;
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-[#171717] block mb-1">
+                <label className="text-xs font-bold uppercase tracking-wider text-white block mb-1 font-mono-tech">
                   Customer Name
                 </label>
                 <input
                   type="text"
                   value={customerName}
                   onChange={e => setCustomerName(e.target.value)}
-                  className="w-full p-2.5 bg-[#F2EFE8] border border-[#E5E0D6] rounded-[2px] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                  className="w-full p-2.5 bg-[#0E0F13] border border-[#22242D] rounded-[5px] text-xs text-white focus:outline-none focus:border-[#FF4D15]"
                 />
               </div>
               <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-[#171717] block mb-1">
+                <label className="text-xs font-bold uppercase tracking-wider text-white block mb-1 font-mono-tech">
                   Phone Number
                 </label>
                 <input
                   type="text"
                   value={customerPhone}
                   onChange={e => setCustomerPhone(e.target.value)}
-                  className="w-full p-2.5 bg-[#F2EFE8] border border-[#E5E0D6] rounded-[2px] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                  className="w-full p-2.5 bg-[#0E0F13] border border-[#22242D] rounded-[5px] text-xs text-white focus:outline-none focus:border-[#FF4D15]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#171717] block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-white block mb-1 font-mono-tech">
                 Delivery Address
               </label>
               <input
                 type="text"
                 value={customerAddress}
                 onChange={e => setCustomerAddress(e.target.value)}
-                className="w-full p-2.5 bg-[#F2EFE8] border border-[#E5E0D6] rounded-[2px] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                className="w-full p-2.5 bg-[#0E0F13] border border-[#22242D] rounded-[5px] text-xs text-white focus:outline-none focus:border-[#FF4D15]"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#171717] block mb-1">
+              <label className="text-xs font-bold uppercase tracking-wider text-white block mb-1 font-mono-tech">
                 Optional Notes
               </label>
               <input
@@ -172,40 +171,40 @@ Please confirm availability and dispatch schedule. Thank you!`;
                 value={customerNotes}
                 onChange={e => setCustomerNotes(e.target.value)}
                 placeholder="Gate code, delivery time, etc."
-                className="w-full p-2.5 bg-[#F2EFE8] border border-[#E5E0D6] rounded-[2px] text-xs text-[#171717] focus:outline-none focus:border-[#171717]"
+                className="w-full p-2.5 bg-[#0E0F13] border border-[#22242D] rounded-[5px] text-xs text-white focus:outline-none focus:border-[#FF4D15]"
               />
             </div>
 
-            <div className="pt-2 text-xs font-mono text-[#66645F]">
+            <div className="pt-2 text-xs font-mono-tech text-[#646876]">
               Intelligent device routing: opens WhatsApp Web on desktop, native app on mobile.
             </div>
           </div>
 
           {/* Generated Structured Message Preview */}
-          <div className="lg:col-span-6 bg-[#171717] text-[#F2EFE8] p-6 sm:p-8 rounded-[4px] border border-[#171717] flex flex-col justify-between">
+          <div className="lg:col-span-6 bg-[#08090B] text-[#F4F4F6] p-6 sm:p-8 rounded-[8px] border border-[#22242D] flex flex-col justify-between shadow-2xl">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[#30312F] mb-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#C6532E]">
+              <div className="flex items-center justify-between pb-4 border-b border-[#1E2028] mb-4">
+                <span className="text-xs font-mono-tech uppercase tracking-widest text-[#FF4D15] font-bold">
                   STRUCTURED MESSAGE OUTPUT
                 </span>
                 <button
                   onClick={copyToClipboard}
-                  className="flex items-center gap-1.5 text-xs font-mono text-[#E5E0D6] hover:text-[#C6532E] transition-colors"
+                  className="flex items-center gap-1.5 text-xs font-mono-tech text-[#9FA4B2] hover:text-[#FF4D15] transition-colors"
                 >
-                  {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copied ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
 
-              <pre className="font-mono text-xs text-[#E5E0D6] leading-relaxed whitespace-pre-wrap bg-[#1F201F] p-4 rounded-[2px] border border-[#30312F] max-h-72 overflow-y-auto">
+              <pre className="font-mono-tech text-xs text-[#E1E4EB] leading-relaxed whitespace-pre-wrap bg-[#101116] p-4 rounded-[6px] border border-[#1E2028] max-h-72 overflow-y-auto">
                 {formattedMessage}
               </pre>
             </div>
 
-            <div className="pt-5 mt-5 border-t border-[#30312F] flex flex-wrap items-center justify-between gap-3">
+            <div className="pt-5 mt-5 border-t border-[#1E2028] flex flex-wrap items-center justify-between gap-3">
               <button
                 onClick={handleTestWhatsApp}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-[2px] bg-[#C6532E] hover:bg-[#b04523] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-[5px] bg-[#FF4D15] hover:bg-[#E63E07] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-[#FF4D15]/20"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>Test Send via WhatsApp</span>
@@ -215,7 +214,7 @@ Please confirm availability and dispatch schedule. Thank you!`;
                 href="https://noire-store-five.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-mono text-[#E5E0D6]/70 hover:text-[#F2EFE8] inline-flex items-center gap-1"
+                className="text-xs font-mono-tech text-[#9FA4B2] hover:text-white inline-flex items-center gap-1"
               >
                 <span>Live in NOIRÉ Store</span>
                 <ExternalLink className="w-3 h-3" />
@@ -224,35 +223,35 @@ Please confirm availability and dispatch schedule. Thank you!`;
           </div>
         </div>
 
-        {/* Section Hierarchy: 3. WHY IT MATTERS (#19) */}
-        <div className="pt-8 border-t border-[#D5CFC3]">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#66645F] block mb-4">
+        {/* Section Footer: Why It Matters */}
+        <div className="pt-8 border-t border-[#22242D]">
+          <span className="text-xs font-mono-tech uppercase tracking-widest text-[#646876] block mb-4">
             Why It Matters:
           </span>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-4 border-l-2 border-[#C6532E] pl-4">
-              <span className="font-sans-ui text-sm font-bold text-[#171717] block mb-1">
+            <div className="p-4 border-l-2 border-[#FF4D15] bg-[#121318]/50 rounded-r-[6px] pl-4">
+              <span className="font-heading text-sm font-bold text-white block mb-1">
                 0% Gateway Fees
               </span>
-              <p className="text-xs text-[#66645F] leading-relaxed">
+              <p className="text-xs text-[#9FA4B2] leading-relaxed font-sans-ui">
                 Keep 100% of your revenue. No credit card gateway commissions, monthly transaction minimums, or payout delays.
               </p>
             </div>
 
-            <div className="p-4 border-l-2 border-[#171717] pl-4">
-              <span className="font-sans-ui text-sm font-bold text-[#171717] block mb-1">
+            <div className="p-4 border-l-2 border-[#3B82F6] bg-[#121318]/50 rounded-r-[6px] pl-4">
+              <span className="font-heading text-sm font-bold text-white block mb-1">
                 Direct Customer Dialogue
               </span>
-              <p className="text-xs text-[#66645F] leading-relaxed">
+              <p className="text-xs text-[#9FA4B2] leading-relaxed font-sans-ui">
                 Every order opens an immediate WhatsApp conversation with your customer for instant confirmation, upselling, and relationship building.
               </p>
             </div>
 
-            <div className="p-4 border-l-2 border-[#73765A] pl-4">
-              <span className="font-sans-ui text-sm font-bold text-[#171717] block mb-1">
-                Higher Conversion in Handheld Markets
+            <div className="p-4 border-l-2 border-emerald-500 bg-[#121318]/50 rounded-r-[6px] pl-4">
+              <span className="font-heading text-sm font-bold text-white block mb-1">
+                Higher Mobile Conversion
               </span>
-              <p className="text-xs text-[#66645F] leading-relaxed">
+              <p className="text-xs text-[#9FA4B2] leading-relaxed font-sans-ui">
                 Customers dislike filling 16-step checkout forms. Sending an order on WhatsApp feels effortless, familiar, and personal.
               </p>
             </div>

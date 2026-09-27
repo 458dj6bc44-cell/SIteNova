@@ -1,43 +1,43 @@
 import { Project, ServiceItem, ProcessStep, ValueProp, WhatsAppStep } from '../types';
 
 export const agencyConfig = {
-  name: 'SiteNova',
-  studioName: 'SiteNova Web Studio',
-  tagline: 'Small Web Studio • Custom Websites',
-  headline: 'WE BUILD WEBSITES THAT FEEL LIKE YOURS.',
+  name: 'AR Digital',
+  studioName: 'AR Digital',
+  tagline: 'Modern Web Design & Digital Engineering',
+  headline: 'WE BUILD DIGITAL EXPERIENCES THAT CONVERT & SCALE.',
   subheadline:
-    'Small studio. Custom websites. Built around your business, your customers, and how you actually sell.',
+    'We design and engineer bespoke, high-performance websites and digital experiences that make businesses look world-class and perform better online.',
   contact: {
     whatsappNumber: '01555380043',
     whatsappIntNumber: '201555380043',
-    whatsappDisplay: '01555380043',
+    whatsappDisplay: '+20 15 5538 0043',
     whatsappDefaultMessage:
-      "Hello SiteNova! I have a project in mind for my business. I'd like to chat about building a custom website.",
-    instagramHandle: '@sitenovastudio',
-    instagramUrl: 'https://instagram.com/sitenovastudio',
-    email: 'hello@sitenova.design',
+      "Hello AR Digital! I have a project in mind for my business. I'd like to chat about building a custom website.",
+    instagramHandle: '@ardigital.studio',
+    instagramUrl: 'https://instagram.com/ardigital.studio',
+    email: 'hello@ardigital.studio',
     location: 'Egypt & Worldwide',
-    status: 'Currently Taking on Projects',
+    status: 'Available for Q2/Q3 Projects',
     turnaroundTime: '7 to 14 Days Typical Delivery',
   },
   stats: [
-    { value: '100% Custom', label: 'No generic templates' },
-    { value: '0% Gateway Fees', label: 'Direct WhatsApp orders' },
-    { value: '< 1.0s Speed', label: 'Fast static React builds' },
-    { value: 'Direct Contact', label: 'Talk with the builders' },
+    { value: '100% Bespoke', label: 'Tailored code, zero templates' },
+    { value: '0% Gateway Fees', label: 'Direct WhatsApp checkout engines' },
+    { value: '< 800ms Speed', label: 'Ultra-fast global edge delivery' },
+    { value: 'Direct Senior', label: 'Work directly with the builders' },
   ],
 };
 
 /**
- * Returns a universal WhatsApp URL.
+ * Returns a universal WhatsApp URL for AR Digital.
  * Automatically adapts: opens WhatsApp Web on desktop or native WhatsApp on mobile via wa.me / web.whatsapp.com.
  */
-export const getSiteNovaWhatsAppUrl = (message?: string): string => {
+export const getARDigitalWhatsAppUrl = (message?: string): string => {
   const text = message || agencyConfig.contact.whatsappDefaultMessage;
   return `https://wa.me/${agencyConfig.contact.whatsappIntNumber}?text=${encodeURIComponent(text)}`;
 };
 
-export const getSiteNovaWhatsAppWebUrl = (message?: string): string => {
+export const getARDigitalWhatsAppWebUrl = (message?: string): string => {
   const text = message || agencyConfig.contact.whatsappDefaultMessage;
   return `https://web.whatsapp.com/send?phone=${agencyConfig.contact.whatsappIntNumber}&text=${encodeURIComponent(text)}`;
 };
@@ -52,8 +52,8 @@ export const verenProject: Project = {
   category: 'Luxury Digital Experience',
   liveUrl: 'https://veren-amber.vercel.app/',
   description:
-    'An evocative, high-fashion luxury digital experience crafted with bespoke editorial layouts, sculptural typography, fluid transitions, and uncompromising art direction. Demonstrating SiteNova’s highest tier of digital craftsmanship.',
-  accentColor: '#C6532E', // Burnt Orange
+    'An evocative, high-fashion luxury digital experience crafted with bespoke editorial layouts, sculptural typography, fluid transitions, and uncompromising art direction. Demonstrating AR Digital’s highest tier of digital craftsmanship.',
+  accentColor: '#FF4D15', // AR Digital Signal Accent
   badge: 'Flagship Project • Luxury Experience',
   features: [
     'Art-directed editorial spatial layouts and bespoke typographical rhythm',
@@ -289,39 +289,39 @@ export const services: ServiceItem[] = [
 ];
 
 /* ==========================================================================
-   WHY SITENOVA (THE SMALL STUDIO ADVANTAGE)
+   WHY AR DIGITAL (AGENCY ADVANTAGE)
    ========================================================================== */
-export const whyChooseSiteNova: ValueProp[] = [
+export const whyChooseARDigital: ValueProp[] = [
   {
-    title: 'Direct Communication',
+    title: 'Direct Senior Collaboration',
     description:
-      'Instead of handing your project between account managers or separate departments, you communicate directly with the people designing and building your site.',
+      'You collaborate directly with senior designers and engineers. No account managers, endless bureaucracy, or lost briefs. Swift execution from day one.',
     metric: '1:1',
     metricLabel: 'Direct with builders',
     icon: 'Flame',
   },
   {
-    title: 'Custom Design, No Templates',
+    title: 'Bespoke Code, Zero Templates',
     description:
-      'We build each website around your specific brand, your products, and how your customers actually buy. No recycled WordPress themes or generic cookie-cutter layouts.',
+      'We craft every digital platform around your brand, your products, and how your customers actually buy. Zero generic WordPress themes or bloated builders.',
     metric: '100%',
     metricLabel: 'Custom tailored code',
     icon: 'Gem',
   },
   {
-    title: 'Fast & Maintenance-Free',
+    title: 'Sub-Second Global Edge Performance',
     description:
-      'Built with modern static React and deployed to edge networks. Your site loads in under a second worldwide, with zero plugin bloat and zero server bills.',
-    metric: '<1s',
-    metricLabel: 'Global page load time',
+      'Engineered with modern static React and deployed on edge CDN networks worldwide. Loads under 800ms with zero database maintenance and zero server overhead.',
+    metric: '<800ms',
+    metricLabel: 'Global edge response',
     icon: 'Gauge',
   },
   {
-    title: 'Affordable vs Large Agencies',
+    title: 'High-Impact Conversion Architecture',
     description:
-      'Because we are a lean, focused studio with zero corporate overhead, you get top-tier design and craftsmanship at a fraction of large agency retainers.',
+      'Our websites are designed to convert: direct WhatsApp checkout, high-speed mobile ergonomics, and frictionless consumer journeys that drive real revenue.',
     metric: '0%',
-    metricLabel: 'Corporate overhead waste',
+    metricLabel: 'Gateway fees on direct chat',
     icon: 'ShieldCheck',
   },
 ];

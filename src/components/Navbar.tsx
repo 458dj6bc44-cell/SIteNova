@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { getSiteNovaWhatsAppUrl } from '../data/portfolioData';
+import { getARDigitalWhatsAppUrl, agencyConfig } from '../data/portfolioData';
+import { ARLogo } from './ARLogo';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,39 +27,36 @@ export const Navbar: React.FC = () => {
     };
   }, [mobileMenuOpen]);
 
-  const whatsappLink = getSiteNovaWhatsAppUrl();
+  const whatsappLink = getARDigitalWhatsAppUrl();
 
   const navLinks = [
     { href: '#work', label: 'WORK' },
     { href: '#services', label: 'SERVICES' },
     { href: '#process', label: 'PROCESS' },
-    { href: '#about', label: 'ABOUT' },
+    { href: '#about', label: 'AGENCY' },
+    { href: '#contact', label: 'CONTACT' },
   ];
 
   return (
     <>
       <header
         id="site-header"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#F2EFE8]/95 backdrop-blur-md border-b border-[#E5E0D6] py-3.5'
+            ? 'bg-[#0B0C0E]/92 backdrop-blur-md border-b border-[#1E2028] py-3.5 shadow-2xl shadow-black/40'
             : 'bg-transparent py-5 sm:py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between">
-            {/* Minimal Brand Logo */}
+            {/* AR Digital Geometric Brand Identity */}
             <a
               id="nav-logo"
               href="#"
-              className="flex items-baseline gap-2.5 text-[#171717]"
+              className="group focus:outline-none"
+              aria-label="AR Digital Home"
             >
-              <span className="text-base sm:text-lg font-bold tracking-tight uppercase font-sans-ui text-[#171717]">
-                SITENOVA
-              </span>
-              <span className="text-[10px] font-mono tracking-widest uppercase text-[#66645F]">
-                WEB STUDIO
-              </span>
+              <ARLogo size="md" />
             </a>
 
             {/* Desktop Navigation Links */}
@@ -67,19 +65,24 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-xs font-mono font-bold tracking-widest uppercase text-[#66645F] hover:text-[#171717] transition-colors"
+                  className="text-xs font-mono-tech font-semibold tracking-widest uppercase text-[#9FA4B2] hover:text-white transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
 
-            {/* Action CTA */}
-            <div className="hidden sm:flex items-center gap-4">
+            {/* Action CTA + Availability */}
+            <div className="hidden sm:flex items-center gap-5">
+              <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-[#14151B] border border-[#22242D] text-[11px] font-mono-tech text-[#9FA4B2]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+                <span>Available for Q2/Q3</span>
+              </div>
+
               <a
                 id="nav-btn-start-project"
                 href="#contact"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-[#171717] hover:bg-[#C6532E] text-[#F2EFE8] font-bold text-xs tracking-wider uppercase transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[5px] bg-[#FF4D15] hover:bg-[#E63E07] text-white font-bold text-xs tracking-wider uppercase transition-all shadow-md shadow-[#FF4D15]/20 hover:shadow-[#FF4D15]/35"
               >
                 <span>START A PROJECT</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -90,14 +93,14 @@ export const Navbar: React.FC = () => {
             <div className="flex md:hidden items-center gap-3">
               <a
                 href="#contact"
-                className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-[4px] bg-[#171717] text-[#F2EFE8]"
+                className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-[4px] bg-[#FF4D15] text-white"
               >
                 START →
               </a>
               <button
                 id="nav-toggle-mobile-menu"
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-1.5 text-[#171717] hover:text-[#C6532E] focus:outline-none transition-colors"
+                className="p-1.5 text-white hover:text-[#FF4D15] focus:outline-none transition-colors"
                 aria-label="Open Navigation Menu"
               >
                 <Menu className="w-5 h-5" />
@@ -114,22 +117,21 @@ export const Navbar: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#171717]/80 backdrop-blur-sm md:hidden flex flex-col justify-end"
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md md:hidden flex flex-col justify-end"
           >
             <motion.div
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'tween', duration: 0.25 }}
-              className="bg-[#F2EFE8] border-t border-[#E5E0D6] p-6 sm:p-8 rounded-t-[8px]"
+              className="bg-[#101115] border-t border-[#22242D] p-6 sm:p-8 rounded-t-[12px]"
             >
-              <div className="flex items-center justify-between pb-6 border-b border-[#E5E0D6]">
-                <span className="text-sm font-bold font-mono uppercase tracking-widest text-[#171717]">
-                  SITENOVA WEB STUDIO
-                </span>
+              <div className="flex items-center justify-between pb-6 border-b border-[#22242D]">
+                <ARLogo size="sm" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-[#171717] hover:text-[#C6532E]"
+                  className="p-2 text-white hover:text-[#FF4D15]"
+                  aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -141,18 +143,18 @@ export const Navbar: React.FC = () => {
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xl font-serif-display text-[#171717] hover:text-[#C6532E] transition-colors py-1"
+                    className="text-lg font-heading font-medium tracking-tight text-[#E1E4EB] hover:text-[#FF4D15] py-1 transition-colors"
                   >
                     {link.label}
                   </a>
                 ))}
               </nav>
 
-              <div className="pt-4 border-t border-[#E5E0D6] flex flex-col gap-3">
+              <div className="pt-6 border-t border-[#22242D] flex flex-col gap-3">
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center py-3 rounded-[4px] bg-[#171717] text-[#F2EFE8] font-bold text-xs uppercase tracking-wider hover:bg-[#C6532E] transition-colors"
+                  className="w-full py-3 rounded-[6px] bg-[#FF4D15] hover:bg-[#E63E07] text-white font-bold text-center text-xs tracking-wider uppercase transition-colors"
                 >
                   START A PROJECT →
                 </a>
@@ -160,9 +162,9 @@ export const Navbar: React.FC = () => {
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center py-2.5 rounded-[4px] border border-[#171717] text-[#171717] font-bold text-xs uppercase tracking-wider hover:bg-[#E5E0D6] transition-colors"
+                  className="w-full py-2.5 rounded-[6px] bg-[#16171E] border border-[#262833] text-[#9FA4B2] hover:text-white font-mono-tech text-center text-xs tracking-wider uppercase transition-colors"
                 >
-                  Direct WhatsApp Chat
+                  CHAT ON WHATSAPP
                 </a>
               </div>
             </motion.div>
